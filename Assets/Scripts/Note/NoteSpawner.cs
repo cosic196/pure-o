@@ -3,23 +3,13 @@
 public class NoteSpawner : MonoBehaviour {
 
     [SerializeField]
-    private int _bpm;
-    [SerializeField]
     private int _numberOfBeatsInAdvance;
     [SerializeField]
-    private GameObject _centerNotePrefab;
-    [SerializeField]
-    private GameObject _centerNoteDoublePrefab;
-    [SerializeField]
-    private GameObject _rightNotePrefab;
-    [SerializeField]
-    private GameObject _rightNoteDoublePrefab;
-    [SerializeField]
-    private GameObject _leftNotePrefab;
-    [SerializeField]
-    private GameObject _leftNoteDoublePrefab;
+    private GameObject _notePrefab;
     [SerializeField]
     private Transform _parentTransform;
+    [SerializeField]
+    private float _sideNoteXOffset;
 
 	void Start () {
         EventManager.StartListening("SpawnNoteCenter", SpawnNoteCenter);
@@ -29,34 +19,34 @@ public class NoteSpawner : MonoBehaviour {
 
     private void SpawnNoteCenter()
     {
-        SpawnNote(_centerNotePrefab, _centerNoteDoublePrefab);
+        SpawnNote(0f, ShootController.Position.Center);
     }
 
     private void SpawnNoteLeft()
     {
-        SpawnNote(_leftNotePrefab, _leftNoteDoublePrefab);
+        SpawnNote(-_sideNoteXOffset, ShootController.Position.Left);
     }
 
     private void SpawnNoteRight()
     {
-        SpawnNote(_rightNotePrefab, _rightNoteDoublePrefab);
+        SpawnNote(_sideNoteXOffset, ShootController.Position.Right);
     }
 
-    private void SpawnNote(GameObject notePrefab, GameObject noteDoublePrefab)
+    private void SpawnNote(float xOffset, ShootController.Position notePosition)
     {
         //Instantiate note
-        GameObject spawnedNote = Instantiate(notePrefab, _parentTransform);
+        GameObject spawnedNote = Instantiate(_notePrefab, _parentTransform, false);
         //Set transform position
         Transform spawnedNoteTransform = spawnedNote.GetComponent<Transform>();
         NoteCollisionController spawnedNoteCollisionController = spawnedNote.GetComponent<NoteCollisionController>();
-        spawnedNoteCollisionController.Init(spawnedNote.GetInstanceID());
-        spawnedNoteTransform.localPosition = GetLocalPosition(spawnedNote.GetComponent<NoteMovementController>());
+        spawnedNoteCollisionController.Init(new NoteInfo {id = spawnedNote.GetInstanceID(), position = notePosition });
+        spawnedNoteTransform.localPosition = GetLocalPosition(LevelStats.Reference.NoteSpeed, xOffset);
 
         //Do the same for the double with inversed transform
-        GameObject spawnedNoteDouble = Instantiate(noteDoublePrefab, _parentTransform);
+        GameObject spawnedNoteDouble = Instantiate(_notePrefab, _parentTransform, false);
         Transform spawnedNoteDoubleTransform = spawnedNoteDouble.GetComponent<Transform>();
         spawnedNoteDoubleTransform.localPosition = Vector3.Scale(spawnedNoteTransform.localPosition, new Vector3(1,-1,1));
-        spawnedNoteDouble.GetComponent<NoteDoubleCollisionController>().Init(spawnedNoteCollisionController.NoteInfo.id);
+        spawnedNoteDouble.GetComponent<NoteCollisionController>().Init(spawnedNoteCollisionController.NoteInfo, true);
 
         //Activate notes
         spawnedNote.SetActive(true);
@@ -65,14 +55,14 @@ public class NoteSpawner : MonoBehaviour {
 
     private float GetDistance(float noteSpeed)
     {
-        float bps = _bpm / 60f;
+        float bps = LevelStats.Reference.Bpm / 60f;
         float time = _numberOfBeatsInAdvance / bps;
         return noteSpeed * time;
     }
 
-    private Vector3 GetLocalPosition(NoteMovementController noteMovementController)
+    private Vector3 GetLocalPosition(float speed, float xOffset)
     {
-        float distance = GetDistance(noteMovementController.Speed);
-        return new Vector3(noteMovementController.Goal.x, distance + noteMovementController.Goal.y);
+        float distance = GetDistance(speed);
+        return new Vector3(xOffset, distance);
     }
 }

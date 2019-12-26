@@ -45,6 +45,7 @@ public class NoteSpawnTester : MonoBehaviour {
                     EventManager.TriggerEvent("SpawnNoteCenter");
                     break;
             }
+            EventManager.TriggerEvent("SpawnBeatLine");
             _timer = 0f;
         }
     }

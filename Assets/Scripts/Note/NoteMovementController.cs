@@ -3,34 +3,19 @@
 public class NoteMovementController : MonoBehaviour {
 
     private Transform _transform;
-    [SerializeField]
-    private float _speed;
-    [SerializeField]
-    private Vector3 _goal;
-    private Vector3 _normalizedDirection;
+    private Vector3 _goal, _currentPosition;
+    private float _distance;
 
-    public float Speed
+    private void OnEnable()
     {
-        get
-        {
-            return _speed;
-        }
-    }
-
-    public Vector3 Goal
-    {
-        get
-        {
-            return _goal;
-        }
-    }
-
-	void Start () {
+        _distance = 0f;
         _transform = GetComponent<Transform>();
-        _normalizedDirection = (_goal - _transform.localPosition).normalized;
-	}
-	
-	void Update () {
-        _transform.localPosition += _normalizedDirection * _speed * CustomTime.GetDeltaTime();
+        _currentPosition = _transform.localPosition;
+        _goal = new Vector3(_transform.localPosition.x, 0f, 0f);
+    }
+
+    void Update () {
+        _distance += LevelStats.Reference.NoteSpeed * CustomTime.GetDeltaTime();
+        _transform.localPosition = Vector3.MoveTowards(_currentPosition, _goal, _distance);
     }
 }

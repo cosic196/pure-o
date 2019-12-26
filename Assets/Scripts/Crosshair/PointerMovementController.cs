@@ -3,7 +3,11 @@
 public class PointerMovementController : MonoBehaviour {
 
     private Transform _transform;
-    private Vector3 _startPosition, _leftPosition, _rightPosition, _currentPosition, _goalPosition;
+    private Vector3 _startPosition, _currentPosition, _goalPosition;
+    [SerializeField]
+    private Vector3 _leftPosition;
+    [SerializeField]
+    private Vector3 _rightPosition;
     [SerializeField]
     private AnimationCurve _animationCurve;
     [SerializeField]
@@ -16,8 +20,6 @@ public class PointerMovementController : MonoBehaviour {
         _startPosition = _transform.localPosition;
         _currentPosition = _startPosition;
         _goalPosition = _startPosition;
-        _leftPosition = new Vector3(-36f, 0f);
-        _rightPosition = new Vector3(36f, 0f);
 
         EventManager.StartListening("PressedRight", MoveRight);
         EventManager.StartListening("PressedLeft", MoveLeft);
