@@ -45,13 +45,14 @@ public class ShootController : MonoBehaviour {
         }
 
         //Shoot logic
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f));
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 100f))
         {
             if (hit.transform.tag == "Shootable")
             {
+                _shootInfo.pointOfHit = hit.point;
                 hit.transform.GetComponent<Shootable>().Shot(JsonUtility.ToJson(_shootInfo));
             }
         }
@@ -81,4 +82,5 @@ public class ShootController : MonoBehaviour {
 public class ShootInfo
 {
     public int damage;
+    public Vector3 pointOfHit;
 }
