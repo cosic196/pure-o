@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Silhouette
-  m_Shader: {fileID: 4800000, guid: 9ae6554bb230416439b199f4e4a5f668, type: 3}
+  m_Shader: {fileID: 4800000, guid: 38c410f2163fb064db079d09bb41ada7, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -65,6 +65,7 @@ Material:
     - _CutOff: 0.1
     - _Cutoff: 0.502
     - _DetailNormalMapScale: 1
+    - _Distance: 0.35
     - _DstBlend: 0
     - _Gloss: 1
     - _GlossMapScale: 1
@@ -74,8 +75,10 @@ Material:
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Offset: 0
+    - _OutlineSize: 0.55
     - _Parallax: 0.02
     - _ReadMask: 255
+    - _Size: 0.025
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 0
     - _SrcBlend: 1
@@ -89,5 +92,8 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.254717, g: 0, b: 0.026612291, a: 1}
+    - _Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    - _CrossColor: {r: 0.6792453, g: 0.009611944, b: 0.009611944, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Outline: {r: 1, g: 0, b: 0, a: 1}
+    - _Speed: {r: -0.1, g: -0.1, b: 0, a: 0}
