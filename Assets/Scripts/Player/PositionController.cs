@@ -33,7 +33,6 @@ public class PositionController : MonoBehaviour {
             _timer = 0f;
             _currentTransform = _goalTransform;
             _goalTransform = _movePoints.Dequeue();
-            Debug.Log(_goalTransform.position);
         }
     }
 
