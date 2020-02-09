@@ -5,13 +5,15 @@ public class NoteSpawner : MonoBehaviour {
     [SerializeField]
     private int _numberOfBeatsInAdvance;
     [SerializeField]
-    private GameObject _notePrefab;
+    private string _noteTag;
     [SerializeField]
     private Transform _parentTransform;
     [SerializeField]
     private float _sideNoteXOffset;
+    private static int noteId;
 
 	void Start () {
+        noteId = 0;
         EventManager.StartListening("SpawnNoteCenter", SpawnNoteCenter);
         EventManager.StartListening("SpawnNoteRight", SpawnNoteRight);
         EventManager.StartListening("SpawnNoteLeft", SpawnNoteLeft);
@@ -35,15 +37,15 @@ public class NoteSpawner : MonoBehaviour {
     private void SpawnNote(float xOffset, ShootController.Position notePosition)
     {
         //Instantiate note
-        GameObject spawnedNote = Instantiate(_notePrefab, _parentTransform, false);
+        GameObject spawnedNote = ObjectPooler.Instance.SpawnFromPool(_noteTag);
         //Set transform position
         Transform spawnedNoteTransform = spawnedNote.GetComponent<Transform>();
         NoteCollisionController spawnedNoteCollisionController = spawnedNote.GetComponent<NoteCollisionController>();
-        spawnedNoteCollisionController.Init(new NoteInfo {id = spawnedNote.GetInstanceID(), position = notePosition });
+        spawnedNoteCollisionController.Init(new NoteInfo {id = noteId++, position = notePosition });
         spawnedNoteTransform.localPosition = GetLocalPosition(LevelStats.Reference.NoteSpeed, xOffset);
 
         //Do the same for the double with inversed transform
-        GameObject spawnedNoteDouble = Instantiate(_notePrefab, _parentTransform, false);
+        GameObject spawnedNoteDouble = ObjectPooler.Instance.SpawnFromPool(_noteTag);
         Transform spawnedNoteDoubleTransform = spawnedNoteDouble.GetComponent<Transform>();
         spawnedNoteDoubleTransform.localPosition = Vector3.Scale(spawnedNoteTransform.localPosition, new Vector3(1,-1,1));
         spawnedNoteDouble.GetComponent<NoteCollisionController>().Init(spawnedNoteCollisionController.NoteInfo, true);

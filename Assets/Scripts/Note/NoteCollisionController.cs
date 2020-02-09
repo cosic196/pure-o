@@ -21,9 +21,13 @@ public class NoteCollisionController : MonoBehaviour {
     private void Start()
     {
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
+        EventManager.StartListening("NoteShot", NoteShot);
+    }
+
+    private void OnEnable()
+    {
         _timer = _timeThreshold;
         _isShot = false;
-        EventManager.StartListening("NoteShot", NoteShot);
     }
 
     private void Update()
@@ -47,6 +51,10 @@ public class NoteCollisionController : MonoBehaviour {
         if(JsonUtility.FromJson<NoteInfo>(noteInfoJson).id == NoteInfo.id)
         {
             _isShot = true;
+            if (!_isDouble)
+            {
+                _gameObjectEventManager.TriggerEvent("NoteShot");
+            }
         }
     }
 

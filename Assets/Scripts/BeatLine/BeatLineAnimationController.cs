@@ -9,12 +9,13 @@ public class BeatLineAnimationController : MonoBehaviour {
     private float _appearTime;
     private float _timer = 0f;
 
-    void Start () {
+    void OnEnable () {
         _image = GetComponent<Image>();
         _goalColor = new Color(_image.color.r, _image.color.g, _image.color.b, _image.color.a);
         _startColor = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
 
         _image.color = new Color(0f, 0f, 0f, 0f);
+        _timer = 0f;
     }
 	
 	void Update () {

@@ -9,6 +9,7 @@ public class BeatLineMovementController : MonoBehaviour {
 	void OnEnable () {
         _transform = GetComponent<Transform>();
         _currentPos = _transform.localPosition;
+        _timer = 0f;
 	}
 	
 	void Update () {

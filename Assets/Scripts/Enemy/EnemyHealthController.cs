@@ -19,11 +19,17 @@ public class EnemyHealthController : MonoBehaviour {
 
     private void Damaged(string shootInfo)
     {
+        if (_dead)
+        {
+            return;
+        }
         _hp -= JsonUtility.FromJson<ShootInfo>(shootInfo).damage;
         if(_hp <= 0)
         {
             _dead = true;
+            _hp = 0;
         }
+        _gameObjectEventManager.TriggerEvent("Damaged", _hp.ToString());
     }
 
     private void Died()

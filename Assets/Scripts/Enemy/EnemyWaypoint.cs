@@ -16,18 +16,9 @@ public class EnemyWaypoint : MonoBehaviour {
 
 	void Start () {
         _transform = GetComponent<Transform>();
-        _startRotation = _enemyTransform.rotation;
-        _startPosition = _enemyTransform.position;
 	}
 	
 	void Update () {
-        // TODO : Remove this after testing
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            StartMoving();
-            Debug.Log("Test");
-        }
-
 		if(_started)
         {
             if(_timer < 1f)
@@ -47,6 +38,8 @@ public class EnemyWaypoint : MonoBehaviour {
 
     public void StartMoving()
     {
+        _startRotation = _enemyTransform.rotation;
+        _startPosition = _enemyTransform.position;
         _started = true;
     }
 }

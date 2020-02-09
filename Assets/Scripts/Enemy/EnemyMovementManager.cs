@@ -13,6 +13,10 @@ public class EnemyMovementManager : MonoBehaviour {
 
     private void EnemyMove()
     {
+        if(_enemyWaypoints.Count <= _currentPoint)
+        {
+            return;
+        }
         foreach(var waypoint in _enemyWaypoints[_currentPoint].enemyWaypointsList)
         {
             waypoint.StartMoving();

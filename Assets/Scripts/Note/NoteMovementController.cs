@@ -6,10 +6,14 @@ public class NoteMovementController : MonoBehaviour {
     private Vector3 _goal, _currentPosition;
     private float _distance;
 
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+    }
+
     private void OnEnable()
     {
         _distance = 0f;
-        _transform = GetComponent<Transform>();
         _currentPosition = _transform.localPosition;
         _goal = new Vector3(_transform.localPosition.x, 0f, 0f);
     }

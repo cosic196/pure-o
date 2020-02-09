@@ -74,12 +74,12 @@ public class GameObjectEventManager : MonoBehaviour {
         }
     }
 
-    public void TriggerEvent(string eventName, string json)
+    public void TriggerEvent(string eventName, string eventInfo)
     {
         ParameterEvent thisEvent = null;
         if (_parameterEventDictionary.TryGetValue(eventName, out thisEvent))
         {
-            thisEvent.Invoke(json);
+            thisEvent.Invoke(eventInfo);
         }
         else
         {

@@ -111,7 +111,7 @@ Shader "Gradient/UnlitGradientCastShadow" {
                 {
                     float4  pos         : SV_POSITION;
                     float2  uv          : TEXCOORD0;
-					float4 screenPos : TEXCOORD2;
+					float4 screenPos : TEXCOORD1;
                     LIGHTING_COORDS(1,2)
                 };
  

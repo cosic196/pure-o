@@ -5,7 +5,7 @@ public class BeatLineSpawner : MonoBehaviour {
     [SerializeField]
     private int _numberOfBeatsInAdvance;
     [SerializeField]
-    private GameObject _prefab;
+    private string _beatLineTag;
     [SerializeField]
     private Transform _parentTransform;
 
@@ -15,10 +15,10 @@ public class BeatLineSpawner : MonoBehaviour {
 
     private void Spawn()
     {
-        GameObject _beatLine = Instantiate(_prefab, _parentTransform);
+        GameObject _beatLine = ObjectPooler.Instance.SpawnFromPool(_beatLineTag);
         _beatLine.GetComponent<Transform>().localPosition = new Vector3(0f, GetDistance(LevelStats.Reference.NoteSpeed));
 
-        GameObject _beatLineMirrored = Instantiate(_prefab, _parentTransform);
+        GameObject _beatLineMirrored = ObjectPooler.Instance.SpawnFromPool(_beatLineTag);
         _beatLineMirrored.GetComponent<Transform>().localPosition = new Vector3(0f, -GetDistance(LevelStats.Reference.NoteSpeed));
 
         _beatLine.SetActive(true);

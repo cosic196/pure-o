@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
@@ -17,7 +16,8 @@ public class NoteAnimationController : MonoBehaviour {
     private float _disappearTime;
     private GameObjectEventManager _gameObjectEventManager;
 
-	void Start () {
+    private void Awake()
+    {
         _image = GetComponent<Image>();
         _transform = GetComponent<Transform>();
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
@@ -25,14 +25,22 @@ public class NoteAnimationController : MonoBehaviour {
         _startColor = new Color(_image.color.r, _image.color.g, _image.color.b, 0);
         _goalScale = new Vector3(0f, _transform.localScale.y, _transform.localScale.z);
         _startScale = new Vector3(_transform.localScale.x, _transform.localScale.y, _transform.localScale.z);
+    }
 
-        _image.color = new Color(0f, 0f, 0f, 0f);
-
+    void Start () {
         _gameObjectEventManager.StartListening("NoteOutOfRange", StartDisappearing);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnEnable()
+    {
+        _image.color = new Color(0f, 0f, 0f, 0f);
+        _transform.localScale = _startScale;
+        _appearTimer = 0f;
+        _disappearTimer = 1f;
+    }
+
+    // Update is called once per frame
+    void Update () {
         Appear();
         Disappear();
 	}
@@ -48,6 +56,7 @@ public class NoteAnimationController : MonoBehaviour {
         {
             _transform.localScale = _goalScale;
             _disappearTimer = 1f;
+            gameObject.SetActive(false);
         }
     }
 

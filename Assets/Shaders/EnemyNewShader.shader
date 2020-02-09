@@ -8,8 +8,8 @@ Shader "Enemy/StaticShaderCrosses" {
         _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
         _Cutoff  ("Alpha cutoff", Range(0,1)) = 0.5
 		_Distance ("Cross Distance", Float) = 0.5
-		_Size ("Cross Size", Float) = 0.1
-		_Speed ("Speed", Vector) = (-0.2,-0.2, 0, 0)
+		[PerRendererData]_Size ("Cross Size", Float) = 0.1
+		[PerRendererData]_Speed ("Speed", Vector) = (-0.2,-0.2, 0, 0)
     }
     SubShader
     {
