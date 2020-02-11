@@ -17,7 +17,7 @@ public class PauseController : MonoBehaviour {
 	
 	private void Pause()
     {
-        CustomTime._customScale = 0f;
+        Time.timeScale = 0f;
         foreach(var component in _componentsToDisable)
         {
             component.enabled = false;
@@ -46,6 +46,6 @@ public class PauseController : MonoBehaviour {
         {
             audioSource.UnPause();
         }
-        CustomTime._customScale = 1f;
+        Time.timeScale = 1f;
     }
 }

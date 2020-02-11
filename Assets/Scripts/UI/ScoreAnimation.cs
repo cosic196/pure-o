@@ -92,10 +92,6 @@ public class ScoreAnimation : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.T))
-        {
-            EventManager.TriggerEvent("ScoreChanged", "1234");
-        }
         if(_timer < 1f)
         {
             for (int i = 0; i < _redScoreNumbers.Count; i++)

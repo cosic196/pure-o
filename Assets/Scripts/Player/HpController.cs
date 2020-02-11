@@ -38,6 +38,7 @@ public class HpController : MonoBehaviour {
     private void Damaged(string noteInfo)
     {
         CurrentHp -= _missedNoteDamage;
+        EventManager.TriggerEvent("PlayerDamaged");
         if(CurrentHp <= 0f)
         {
             EventManager.TriggerEvent("PlayerDied");
