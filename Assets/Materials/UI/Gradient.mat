@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Silhouette
-  m_Shader: {fileID: 4800000, guid: 38c410f2163fb064db079d09bb41ada7, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
+  m_Name: Gradient
+  m_Shader: {fileID: 4800000, guid: 02872f92cc0b7694e8b2d5c6ce6f2d5e, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,10 +20,6 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _CutTex:
-        m_Texture: {fileID: 2800000, guid: e9eb4f8e1e7aab84bb3da3885ec6f0cb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,10 +36,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 0.5}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: e9eb4f8e1e7aab84bb3da3885ec6f0cb, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -61,39 +57,28 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _ColorMask: 15
-    - _Culling: 2
-    - _CutOff: 0.1
-    - _Cutoff: 0.502
+    - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distance: 0.35
     - _DstBlend: 0
-    - _Gloss: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
-    - _GlossyReflections: 0
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 1
+    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 0
-    - _OutlineSize: 0.55
     - _Parallax: 0.02
-    - _ReadMask: 255
-    - _Size: 0.025
+    - _Scale: 1
     - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Stencil: 0
-    - _StencilComp: 0
-    - _StencilFail: 0
+    - _StencilComp: 8
     - _StencilOp: 0
-    - _StencilZFail: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _WriteMask: 255
-    - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
-    - _CrossColor: {r: 0.6745098, g: 0.007843138, b: 0.007843138, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 0.84705883}
+    - _Color2: {r: 0, g: 0, b: 0, a: 0.3764706}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline: {r: 1, g: 0, b: 0, a: 1}
-    - _Speed: {r: -0.1, g: -0.1, b: 0, a: 0}

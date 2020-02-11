@@ -110,8 +110,8 @@ Shader "Gradient/UnlitGradientCastShadow" {
                 struct v2f
                 {
                     float4  pos         : SV_POSITION;
-                    float2  uv          : TEXCOORD0;
-					float4 screenPos : TEXCOORD1;
+                    float2  uv          : TEXCOORD2;
+					float4 screenPos : TEXCOORD3;
                     LIGHTING_COORDS(1,2)
                 };
  

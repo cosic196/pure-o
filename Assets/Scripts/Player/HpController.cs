@@ -3,35 +3,55 @@
 public class HpController : MonoBehaviour {
 
     [SerializeField]
-    private float _hp;
+    private float _maxHp;
     private float _currentHp;
     [SerializeField]
     private float _regenerationSpeed;
     [SerializeField]
     private float _missedNoteDamage;
+
+    public float CurrentHp
+    {
+        get
+        {
+            return _currentHp;
+        }
+        set
+        {
+            float returnValue;
+            if (value < 0)
+                returnValue = 0;
+            else if (value > _maxHp)
+                returnValue = _maxHp;
+            else
+                returnValue = value;
+            _currentHp = returnValue;
+            EventManager.TriggerEvent("HpChanged", returnValue.ToString() + "/" + _maxHp.ToString());
+        }
+    }
     
 	void Start () {
         EventManager.StartListening("NoteOutOfRange", Damaged);
-        _currentHp = _hp;
+        _currentHp = _maxHp;
 	}
 	
     private void Damaged(string noteInfo)
     {
-        _currentHp -= _missedNoteDamage;
-        if(_currentHp <= 0f)
+        CurrentHp -= _missedNoteDamage;
+        if(CurrentHp <= 0f)
         {
             EventManager.TriggerEvent("PlayerDied");
         }
     }
     
 	void Update () {
-		if(_currentHp < _hp)
+		if(CurrentHp < _maxHp)
         {
-            _currentHp += _regenerationSpeed * CustomTime.GetDeltaTime();
+            CurrentHp += _regenerationSpeed * CustomTime.GetDeltaTime();
         }
-        if(_currentHp > _hp)
+        if(CurrentHp > _maxHp)
         {
-            _currentHp = _hp;
+            CurrentHp = _maxHp;
         }
 	}
 }

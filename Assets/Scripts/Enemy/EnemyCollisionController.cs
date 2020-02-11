@@ -12,7 +12,6 @@ public class EnemyCollisionController : Shootable {
 
     public override void Shot(string shootInfo)
     {
-        Debug.Log(gameObject.name + " got shot.");
         gameObjectEventManager.TriggerEvent("Shot", shootInfo);
     }
 }
