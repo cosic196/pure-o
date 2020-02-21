@@ -11,7 +11,7 @@ public class RestartController : MonoBehaviour {
 
     public void Restart()
     {
-        CustomTime._customScale = 1;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

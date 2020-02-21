@@ -31,6 +31,7 @@ public class ShootController : MonoBehaviour {
         //Check if you hit a note
         if (_notesInRange.Count == 0)
         {
+            EventManager.TriggerEvent("OutOfRhythmShot");
             return;
         }
         else
@@ -38,7 +39,7 @@ public class ShootController : MonoBehaviour {
             NoteInfo currentNote = _notesInRange.Dequeue();
             if(currentNote.position != _currentPosition)
             {
-                // TODO - Implement missing notes
+                EventManager.TriggerEvent("OutOfRhythmShot");
                 return;
             }
             EventManager.TriggerEvent("NoteShot", JsonUtility.ToJson(currentNote));
@@ -54,6 +55,10 @@ public class ShootController : MonoBehaviour {
             {
                 _shootInfo.pointOfHit = hit.point;
                 hit.transform.GetComponent<Shootable>().Shot(JsonUtility.ToJson(_shootInfo));
+            }
+            else
+            {
+                EventManager.TriggerEvent("HitAWall", hit.point.x + "," + hit.point.y + "," + hit.point.z + "," + hit.normal.x + "," + hit.normal.y + "," + hit.normal.z);
             }
         }
         EventManager.TriggerEvent("Shot");

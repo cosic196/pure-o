@@ -92,8 +92,8 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
-    - _CrossColor: {r: 0.6745098, g: 0.007843138, b: 0.007843138, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _CrossColor: {r: 0.6226415, g: 0, b: 0.0058192126, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Outline: {r: 1, g: 0, b: 0, a: 1}
     - _Speed: {r: -0.1, g: -0.1, b: 0, a: 0}

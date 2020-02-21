@@ -27,6 +27,8 @@ public class EnemyHealthController : MonoBehaviour {
         if(_hp <= 0)
         {
             _dead = true;
+            EventManager.TriggerEvent("AnEnemyDied");
+            _gameObjectEventManager.TriggerEvent("Killed");
             _hp = 0;
         }
         _gameObjectEventManager.TriggerEvent("Damaged", _hp.ToString());

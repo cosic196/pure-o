@@ -3,7 +3,7 @@
 public class EnemyBloodAnimationController : MonoBehaviour {
 
     [SerializeField]
-    private GameObject _shotParticlePrefab, _diedParticlePrefab;
+    private GameObject _shotParticlePrefab, _shotParticlePrefab2 ,_diedParticlePrefab;
     private GameObjectEventManager _gameObjectEventManager;
     private Transform _transform;
     
@@ -24,6 +24,8 @@ public class EnemyBloodAnimationController : MonoBehaviour {
     {
         Vector3 position = JsonUtility.FromJson<ShootInfo>(vectorJson).pointOfHit;
         var particleSystem = Instantiate(_shotParticlePrefab, position, Quaternion.identity, _transform);
+        var particleSystem2 = Instantiate(_shotParticlePrefab2, position, Quaternion.identity, _transform);
         particleSystem.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
+        particleSystem2.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
     }
 }

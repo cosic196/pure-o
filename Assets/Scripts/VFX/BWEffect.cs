@@ -3,7 +3,6 @@
 [ExecuteInEditMode]
 public class BWEffect : MonoBehaviour
 {
-
     public float intensity;
     private Material material;
 
@@ -24,5 +23,17 @@ public class BWEffect : MonoBehaviour
 
         material.SetFloat("_bwBlend", intensity);
         Graphics.Blit(source, destination, material);
+    }
+
+    private void Start()
+    {
+        EventManager.StartListening("HpChanged", UpdateIntensity);
+    }
+
+    private void UpdateIntensity(string hpSlashMaxHp)
+    {
+        float currentHp = float.Parse(hpSlashMaxHp.Split('/')[0]);
+        float maxHp = float.Parse(hpSlashMaxHp.Split('/')[1]);
+        intensity = 1 - currentHp / maxHp;
     }
 }

@@ -32,6 +32,7 @@ public class HpController : MonoBehaviour {
     
 	void Start () {
         EventManager.StartListening("NoteOutOfRange", Damaged);
+        EventManager.StartListening("OutOfRhythmShot", DamagedNoInput);
         _currentHp = _maxHp;
 	}
 	
@@ -44,8 +45,18 @@ public class HpController : MonoBehaviour {
             EventManager.TriggerEvent("PlayerDied");
         }
     }
-    
-	void Update () {
+
+    private void DamagedNoInput()
+    {
+        CurrentHp -= _missedNoteDamage;
+        EventManager.TriggerEvent("PlayerDamaged");
+        if (CurrentHp <= 0f)
+        {
+            EventManager.TriggerEvent("PlayerDied");
+        }
+    }
+
+    void Update () {
 		if(CurrentHp < _maxHp)
         {
             CurrentHp += _regenerationSpeed * CustomTime.GetDeltaTime();
