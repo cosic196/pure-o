@@ -35,7 +35,7 @@ public class ActiveLineColoring : MonoBehaviour {
         {
             _timer = 0f;
         }
-        _timerAdd = _animationSpeed * CustomTime.GetDeltaTime();
+        _timerAdd = _animationSpeed;
     }
 
     private void ColorInactive()
@@ -44,13 +44,13 @@ public class ActiveLineColoring : MonoBehaviour {
         {
             _timer = 1f;
         }
-        _timerAdd = -(_animationSpeed * CustomTime.GetDeltaTime());
+        _timerAdd = -_animationSpeed;
     }
 
     void Update () {
 		if(_timer <= 1f && _timer >= 0f)
         {
-            _timer += _timerAdd;
+            _timer += _timerAdd * CustomTime.GetDeltaTime();
             _image.color = Color.Lerp(_inactiveColor, _activeColor, _animationCurve.Evaluate(_timer));
         }
 	}

@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: 37d210ae12b22d74392e6e38dd05dd73
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Barrel_GUN
+    100002: GUN_aimhead
+    100004: GUN_Backtop
+    100006: GUN_Backtopglow
+    100008: GUN_backtophead
+    100010: GUN_bullethole
+    100012: GUN_bulletholeway
+    100014: GUN_bulletwayhead
+    100016: GUN_Downbase
+    100018: GUN_downchin
+    100020: GUN_extrude1
+    100022: GUN_extrude2
+    100024: GUN_extrude3
+    100026: GUN_extrude4
+    100028: GUN_FrontTopglow
+    100030: GUN_Handleglow
+    100032: GUN_polySurface29
+    100034: GUN_polySurface30
+    100036: GUN_trigger
+    100038: GUN_upchin
+    100040: //RootNode
+    400000: Barrel_GUN
+    400002: GUN_aimhead
+    400004: GUN_Backtop
+    400006: GUN_Backtopglow
+    400008: GUN_backtophead
+    400010: GUN_bullethole
+    400012: GUN_bulletholeway
+    400014: GUN_bulletwayhead
+    400016: GUN_Downbase
+    400018: GUN_downchin
+    400020: GUN_extrude1
+    400022: GUN_extrude2
+    400024: GUN_extrude3
+    400026: GUN_extrude4
+    400028: GUN_FrontTopglow
+    400030: GUN_Handleglow
+    400032: GUN_polySurface29
+    400034: GUN_polySurface30
+    400036: GUN_trigger
+    400038: GUN_upchin
+    400040: //RootNode
+    2100000: aiStandardSurface2SG
+    2100002: aiStandardSurface1SG
+    2300000: Barrel_GUN
+    2300002: GUN_aimhead
+    2300004: GUN_Backtop
+    2300006: GUN_Backtopglow
+    2300008: GUN_backtophead
+    2300010: GUN_bullethole
+    2300012: GUN_bulletholeway
+    2300014: GUN_bulletwayhead
+    2300016: GUN_Downbase
+    2300018: GUN_downchin
+    2300020: GUN_extrude1
+    2300022: GUN_extrude2
+    2300024: GUN_extrude3
+    2300026: GUN_extrude4
+    2300028: GUN_FrontTopglow
+    2300030: GUN_Handleglow
+    2300032: GUN_polySurface29
+    2300034: GUN_polySurface30
+    2300036: GUN_trigger
+    2300038: GUN_upchin
+    3300000: Barrel_GUN
+    3300002: GUN_aimhead
+    3300004: GUN_Backtop
+    3300006: GUN_Backtopglow
+    3300008: GUN_backtophead
+    3300010: GUN_bullethole
+    3300012: GUN_bulletholeway
+    3300014: GUN_bulletwayhead
+    3300016: GUN_Downbase
+    3300018: GUN_downchin
+    3300020: GUN_extrude1
+    3300022: GUN_extrude2
+    3300024: GUN_extrude3
+    3300026: GUN_extrude4
+    3300028: GUN_FrontTopglow
+    3300030: GUN_Handleglow
+    3300032: GUN_polySurface29
+    3300034: GUN_polySurface30
+    3300036: GUN_trigger
+    3300038: GUN_upchin
+    4300000: Barrel_GUN
+    4300002: GUN_aimhead
+    4300004: GUN_Backtop
+    4300006: GUN_Backtopglow
+    4300008: GUN_backtophead
+    4300010: GUN_bullethole
+    4300012: GUN_bulletholeway
+    4300014: GUN_bulletwayhead
+    4300016: GUN_Downbase
+    4300018: GUN_downchin
+    4300020: GUN_extrude1
+    4300022: GUN_extrude2
+    4300024: GUN_extrude3
+    4300026: GUN_extrude4
+    4300028: GUN_FrontTopglow
+    4300030: GUN_Handleglow
+    4300032: GUN_polySurface29
+    4300034: GUN_polySurface30
+    4300036: GUN_trigger
+    4300038: GUN_upchin
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface1SG
+    second: {fileID: 2100000, guid: a87a38b226197984c9d2d87a7da3dccd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface2SG
+    second: {fileID: 2100000, guid: bfdedd39b2ee6da4cad5186b19ee95a8, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.05
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

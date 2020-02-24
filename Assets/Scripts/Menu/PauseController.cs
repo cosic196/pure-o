@@ -30,6 +30,8 @@ public class PauseController : MonoBehaviour {
         {
             audioSource.Pause();
         }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Unpause()

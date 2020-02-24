@@ -12,11 +12,12 @@ public class ShootController : MonoBehaviour {
     }
     [SerializeField]
     private ShootInfo _shootInfo;
-    private Position _currentPosition = Position.Center;
+    private Position _currentPosition;
     private Queue<NoteInfo> _notesInRange;
 
 	// Use this for initialization
 	void Start () {
+        SetCurrentPosition(Position.Center);
         _notesInRange = new Queue<NoteInfo>();
         EventManager.StartListening("PressedShoot", Shoot);
         EventManager.StartListening("NoteInRange", AddNote);
