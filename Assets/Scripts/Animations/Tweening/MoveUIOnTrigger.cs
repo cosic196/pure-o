@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MoveOnTrigger : MonoBehaviour {
+public class MoveUIOnTrigger : MonoBehaviour {
 
     [SerializeField]
     private string _trigger;
@@ -14,17 +14,19 @@ public class MoveOnTrigger : MonoBehaviour {
     private bool _useSetPositionAsStartPosition = true;
     [SerializeField]
     private Vector3 _startPosition;
+    [SerializeField]
+    private bool _unscaledTime = false;
 
     private float _timer;
-    private Transform _transform;
+    private RectTransform _transform;
 
     void Start()
     {
-        _transform = GetComponent<Transform>();
+        _transform = GetComponent<RectTransform>();
         _timer = 1f;
         if (_useSetPositionAsStartPosition)
         {
-            _startPosition = _transform.localPosition;
+            _startPosition = _transform.anchoredPosition;
         }
         EventManager.StartListening(_trigger, () => { _timer = 0f; });
     }
@@ -33,13 +35,20 @@ public class MoveOnTrigger : MonoBehaviour {
     {
         if (_timer < 1f)
         {
-            _timer += _animationSpeed * CustomTime.GetDeltaTime();
-            _transform.localPosition = Vector3.Lerp(_startPosition, _goalPosition, _animationCurve.Evaluate(_timer));
+            if (_unscaledTime)
+            {
+                _timer += _animationSpeed * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            }
+            _transform.anchoredPosition = Vector3.Lerp(_startPosition, _goalPosition, _animationCurve.Evaluate(_timer));
         }
         else if (_timer > 1f)
         {
             _timer = 1f;
-            _transform.localPosition = Vector3.Lerp(_startPosition, _goalPosition, _animationCurve.Evaluate(1f));
+            _transform.anchoredPosition = Vector3.Lerp(_startPosition, _goalPosition, _animationCurve.Evaluate(1f));
         }
     }
 }

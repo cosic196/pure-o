@@ -107,7 +107,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("EventManager - No listeners on event: " + eventName);
+            Debug.LogWarning("EventManager - No listeners on event: " + eventName);
         }
     }
 
@@ -120,7 +120,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("EventManager - No listeners on event: " + eventName);
+            Debug.LogWarning("EventManager - No listeners on event: " + eventName);
         }
     }
 }

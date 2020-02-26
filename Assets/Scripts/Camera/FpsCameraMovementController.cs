@@ -19,12 +19,22 @@ public class FpsCameraMovementController : MonoBehaviour
 
     void Start()
     {
+        // Set sensitivity from player prefs
+        SetSensitivity();
+        EventManager.StartListening("SensitivityChanged", SetSensitivity);
+
         // Set target direction to the camera's initial orientation.
         targetDirection = transform.localRotation.eulerAngles;
 
         // Set target direction for the character body to its inital state.
         if (characterBody)
             targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
+    }
+
+    private void SetSensitivity()
+    {
+        float prefSensitivity = PlayerPrefs.GetFloat("Sensitivity");
+        sensitivity = new Vector2(prefSensitivity, prefSensitivity);
     }
 
     void Update()

@@ -9,6 +9,7 @@ public class HpController : MonoBehaviour {
     private float _regenerationSpeed;
     [SerializeField]
     private float _missedNoteDamage;
+    private bool _dead = false;
 
     public float CurrentHp
     {
@@ -18,6 +19,8 @@ public class HpController : MonoBehaviour {
         }
         set
         {
+            if (_dead)
+                return;
             float returnValue;
             if (value < 0)
                 returnValue = 0;
@@ -38,20 +41,30 @@ public class HpController : MonoBehaviour {
 	
     private void Damaged(string noteInfo)
     {
+        if (!enabled)
+            return;
+        if (_dead)
+            return;
         CurrentHp -= _missedNoteDamage;
         EventManager.TriggerEvent("PlayerDamaged");
         if(CurrentHp <= 0f)
         {
+            _dead = true;
             EventManager.TriggerEvent("PlayerDied");
         }
     }
 
     private void DamagedNoInput()
     {
+        if (!enabled)
+            return;
+        if (_dead)
+            return;
         CurrentHp -= _missedNoteDamage;
         EventManager.TriggerEvent("PlayerDamaged");
         if (CurrentHp <= 0f)
         {
+            _dead = true;
             EventManager.TriggerEvent("PlayerDied");
         }
     }

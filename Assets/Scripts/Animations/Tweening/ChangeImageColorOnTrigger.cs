@@ -15,6 +15,8 @@ public class ChangeImageColorOnTrigger : MonoBehaviour {
     private bool _useSetColorAsStartColor = true;
     [SerializeField]
     private Color _startColor;
+    [SerializeField]
+    private bool _unscaledTime = false;
 
     private float _timer;
     private Image _image;
@@ -34,7 +36,14 @@ public class ChangeImageColorOnTrigger : MonoBehaviour {
     {
         if (_timer < 1f)
         {
-            _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            if (_unscaledTime)
+            {
+                _timer += _animationSpeed * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            }
             _image.color = Color.Lerp(_startColor, _goalColor, _animationCurve.Evaluate(_timer));
         }
         else if (_timer > 1f)

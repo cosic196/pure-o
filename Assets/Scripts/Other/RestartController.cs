@@ -6,7 +6,6 @@ public class RestartController : MonoBehaviour {
     private void Start()
     {
         EventManager.StartListening("Restarted", Restart);
-        EventManager.StartListening("PlayerDied", Restart);
     }
 
     public void Restart()

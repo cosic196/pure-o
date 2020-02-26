@@ -1,23 +1,45 @@
-﻿using UnityEngine;
+﻿using SonicBloom.Koreo;
+using UnityEngine;
 
 public class BeatLineMovementController : MonoBehaviour {
 
     private Transform _transform;
-    private Vector3 _currentPos;
-    private float _timer = 0f;
+    private Koreography _playingKoreo;
+    private KoreographyEvent _trackedEvent;
+    private float _speedMultiplier = 1f;
 
-	void OnEnable () {
-        _transform = GetComponent<Transform>();
-        _currentPos = _transform.localPosition;
-        _timer = 0f;
-	}
-	
-	void Update () {
-        _transform.localPosition = Vector3.MoveTowards(_currentPos, Vector3.zero, _timer);
-        _timer += LevelStats.Reference.NoteSpeed * CustomTime.GetDeltaTime();
-        if(_transform.localPosition == Vector3.zero)
+    private void Update()
+    {
+        Move();
+        if(_speedMultiplier > 0)
         {
-            gameObject.SetActive(false);
+            if(_transform.localPosition.y <= 0f)
+            {
+                gameObject.SetActive(false);
+            }
         }
-	}
+        else
+        {
+            if (_transform.localPosition.y >= 0f)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void Move()
+    {
+        float samplesPerUnit = _playingKoreo.SampleRate / LevelStats.Reference.NoteSpeed;
+        float y = -((_playingKoreo.GetLatestSampleTime() - _trackedEvent.StartSample) / samplesPerUnit);
+        _transform.localPosition = new Vector3(_transform.localPosition.x, _speedMultiplier * y, _transform.localPosition.z);
+    }
+
+    public void Init(KoreographyEvent koreographyEvent, float speedMultiplier = 1f)
+    {
+        _transform = GetComponent<Transform>();
+        _playingKoreo = Koreographer.Instance.GetKoreographyAtIndex(0);
+        _trackedEvent = koreographyEvent;
+        _speedMultiplier = speedMultiplier;
+        Move();
+    }
 }

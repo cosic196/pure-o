@@ -14,6 +14,7 @@ public class InputController : MonoBehaviour {
     private void Start()
     {
         EventManager.StartListening("Unpaused", OnUnpaused);
+        EventManager.StartListening("PlayerDied", () => enabled = false);
     }
 
     void Update () {

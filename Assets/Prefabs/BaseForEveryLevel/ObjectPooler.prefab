@@ -33,7 +33,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091026413330432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -54,9 +54,9 @@ MonoBehaviour:
   pools:
   - tag: Note
     prefab: {fileID: 1117004516456908, guid: c8ef174c98179e7458b30d015de95547, type: 2}
-    size: 15
+    size: 70
     parent: {fileID: 0}
   - tag: BeatLine
     prefab: {fileID: 1551434748749242, guid: 9b115b85771c9e4419e3078dc6d042ea, type: 2}
-    size: 30
+    size: 50
     parent: {fileID: 0}

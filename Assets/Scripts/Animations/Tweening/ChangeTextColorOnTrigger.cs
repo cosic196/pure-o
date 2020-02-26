@@ -15,6 +15,8 @@ public class ChangeTextColorOnTrigger : MonoBehaviour {
     private bool _useSetColorAsStartColor = true;
     [SerializeField]
     private Color _startColor;
+    [SerializeField]
+    private bool _unscaledTime = false;
 
     private float _timer;
     private TextMeshProUGUI _text;
@@ -27,14 +29,28 @@ public class ChangeTextColorOnTrigger : MonoBehaviour {
         {
             _startColor = _text.color;
         }
-        EventManager.StartListening(_trigger, () => { _timer = 0f; });
+        if (string.IsNullOrEmpty(_trigger))
+        {
+            _timer = 0f;
+        }
+        else
+        {
+            EventManager.StartListening(_trigger, () => { _timer = 0f; });
+        }
     }
 
     void Update()
     {
         if (_timer < 1f)
         {
-            _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            if (_unscaledTime)
+            {
+                _timer += _animationSpeed * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            }
             _text.color = Color.Lerp(_startColor, _goalColor, _animationCurve.Evaluate(_timer));
         }
         else if (_timer > 1f)

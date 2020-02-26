@@ -1,22 +1,28 @@
-﻿using UnityEngine;
+﻿using SonicBloom.Koreo;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour {
-
+    
     [SerializeField]
-    private int _numberOfBeatsInAdvance;
+    private string _poolTag;
     [SerializeField]
-    private string _noteTag;
+    private string _koreoTag;
     [SerializeField]
     private Transform _parentTransform;
     [SerializeField]
     private float _sideNoteXOffset;
-    private static int noteId;
+    [SerializeField]
+    private int _notesToSpawn;
+    private List<KoreographyEvent> _events;
+    private static int _eventNumber;
 
-	void Start () {
-        noteId = 0;
-        EventManager.StartListening("SpawnNoteCenter", SpawnNoteCenter);
-        EventManager.StartListening("SpawnNoteRight", SpawnNoteRight);
-        EventManager.StartListening("SpawnNoteLeft", SpawnNoteLeft);
+    void Start () {
+        _eventNumber = 0;
+        _notesToSpawn *= 2;
+        _events = Koreographer.Instance.GetKoreographyAtIndex(0).GetTrackByID(_koreoTag).GetAllEvents();
+        Koreographer.Instance.RegisterForEvents(_koreoTag, NoteTrigger);
+        EventManager.StartListening("KoreographerStarted", KoreographerStarted);
     }
 
     private void SpawnNoteCenter()
@@ -37,34 +43,80 @@ public class NoteSpawner : MonoBehaviour {
     private void SpawnNote(float xOffset, ShootController.Position notePosition)
     {
         //Instantiate note
-        GameObject spawnedNote = ObjectPooler.Instance.SpawnFromPool(_noteTag);
+        GameObject spawnedNote = ObjectPooler.Instance.SpawnFromPool(_poolTag);
         //Set transform position
         Transform spawnedNoteTransform = spawnedNote.GetComponent<Transform>();
         NoteCollisionController spawnedNoteCollisionController = spawnedNote.GetComponent<NoteCollisionController>();
-        spawnedNoteCollisionController.Init(new NoteInfo {id = noteId++, position = notePosition });
-        spawnedNoteTransform.localPosition = GetLocalPosition(LevelStats.Reference.NoteSpeed, xOffset);
+        spawnedNoteCollisionController.Init(new NoteInfo {id = _eventNumber, position = notePosition });
+        spawnedNoteTransform.localPosition = GetLocalPosition(xOffset);
+        //Set eventId
+        spawnedNote.GetComponent<NoteMovementController>().Init(_events[_eventNumber]);
 
         //Do the same for the double with inversed transform
-        GameObject spawnedNoteDouble = ObjectPooler.Instance.SpawnFromPool(_noteTag);
+        GameObject spawnedNoteDouble = ObjectPooler.Instance.SpawnFromPool(_poolTag);
         Transform spawnedNoteDoubleTransform = spawnedNoteDouble.GetComponent<Transform>();
         spawnedNoteDoubleTransform.localPosition = Vector3.Scale(spawnedNoteTransform.localPosition, new Vector3(1,-1,1));
         spawnedNoteDouble.GetComponent<NoteCollisionController>().Init(spawnedNoteCollisionController.NoteInfo, true);
+        spawnedNoteDouble.GetComponent<NoteMovementController>().Init(_events[_eventNumber], -1f);
+
+        _eventNumber++;
 
         //Activate notes
         spawnedNote.SetActive(true);
         spawnedNoteDouble.SetActive(true);
     }
-
-    private float GetDistance(float noteSpeed)
+    
+    private void NoteTrigger(KoreographyEvent ev)
     {
-        float bps = LevelStats.Reference.Bpm / 60f;
-        float time = _numberOfBeatsInAdvance / bps;
-        return noteSpeed * time;
+        if(_events.Count <= _eventNumber)
+        {
+            return;
+        }
+        if (!_events[_eventNumber].HasIntPayload())
+        {
+            Debug.LogError("Invalid event payload on a note!");
+            return;
+        }
+        if (_events[_eventNumber].GetIntValue() == -1)
+        {
+            SpawnNoteLeft();
+        }
+        else if (_events[_eventNumber].GetIntValue() == 0)
+        {
+            SpawnNoteCenter();
+        }
+        else if (_events[_eventNumber].GetIntValue() == 1)
+        {
+            SpawnNoteRight();
+        }
     }
 
-    private Vector3 GetLocalPosition(float speed, float xOffset)
+    private void KoreographerStarted()
     {
-        float distance = GetDistance(speed);
-        return new Vector3(xOffset, distance);
+        for (int i = 0; i < _notesToSpawn && i < _events.Count; i++)
+        {
+            if (!_events[i].HasIntPayload())
+            {
+                Debug.LogError("Invalid event payload on a note!");
+                return;
+            }
+            if (_events[i].GetIntValue() == -1)
+            {
+                SpawnNoteLeft();
+            }
+            else if (_events[i].GetIntValue() == 0)
+            {
+                SpawnNoteCenter();
+            }
+            else if (_events[i].GetIntValue() == 1)
+            {
+                SpawnNoteRight();
+            }
+        }
+    }
+
+    private Vector3 GetLocalPosition(float xOffset)
+    {
+        return new Vector3(xOffset, 0);
     }
 }

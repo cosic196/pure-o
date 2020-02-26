@@ -14,6 +14,8 @@ public class ResizeOnTrigger : MonoBehaviour {
     private bool _useSetSizeAsStartSize = true;
     [SerializeField]
     private Vector3 _startSize;
+    [SerializeField]
+    private bool _unscaledTime = false;
 
     private float _timer;
     private Transform _transform;
@@ -25,13 +27,27 @@ public class ResizeOnTrigger : MonoBehaviour {
         {
             _startSize = _transform.localScale;
         }
-        EventManager.StartListening(_trigger, () => { _timer = 0f; });
+        if(string.IsNullOrEmpty(_trigger))
+        {
+            _timer = 0f;
+        }
+        else
+        {
+            EventManager.StartListening(_trigger, () => { _timer = 0f; });
+        }
 	}
 	
 	void Update () {
 		if(_timer < 1f)
         {
-            _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            if(_unscaledTime)
+            {
+                _timer += _animationSpeed * Time.unscaledDeltaTime;
+            }
+            else
+            {
+                _timer += _animationSpeed * CustomTime.GetDeltaTime();
+            }
             _transform.localScale = Vector3.Lerp(_startSize, _goalSize, _animationCurve.Evaluate(_timer));
         }
         else if (_timer > 1f)
