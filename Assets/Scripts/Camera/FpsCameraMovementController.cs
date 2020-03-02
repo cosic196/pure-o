@@ -3,6 +3,8 @@
 [AddComponentMenu("Camera/Simple Smooth Mouse Look ")]
 public class FpsCameraMovementController : MonoBehaviour
 {
+    private Transform _transform;
+
     Vector2 _mouseAbsolute;
     Vector2 _smoothMouse;
 
@@ -19,12 +21,16 @@ public class FpsCameraMovementController : MonoBehaviour
 
     void Start()
     {
+        _transform = GetComponent<Transform>();
+#if UNITY_ANDROID || UNITY_IOS
+        Input.gyro.enabled = true;
+#endif
         // Set sensitivity from player prefs
         SetSensitivity();
         EventManager.StartListening("SensitivityChanged", SetSensitivity);
 
         // Set target direction to the camera's initial orientation.
-        targetDirection = transform.localRotation.eulerAngles;
+        targetDirection = _transform.localRotation.eulerAngles;
 
         // Set target direction for the character body to its inital state.
         if (characterBody)
@@ -34,11 +40,21 @@ public class FpsCameraMovementController : MonoBehaviour
     private void SetSensitivity()
     {
         float prefSensitivity = PlayerPrefs.GetFloat("Sensitivity");
+        if(prefSensitivity == 0)
+        {
+            prefSensitivity = 0.5f;
+        }
         sensitivity = new Vector2(prefSensitivity, prefSensitivity);
     }
 
     void Update()
     {
+#if UNITY_ANDROID || UNITY_IOS
+        _transform.Rotate(0, -Input.gyro.rotationRateUnbiased.y * sensitivity.y, 0);
+        _transform.Rotate(-Input.gyro.rotationRateUnbiased.x * sensitivity.x, 0, 0);
+        _transform.localEulerAngles = new Vector3(_transform.localEulerAngles.x, _transform.localEulerAngles.y, 0f);
+        return;
+#endif
         // Ensure the cursor is always locked when set
         if (lockCursor)
         {
@@ -70,7 +86,7 @@ public class FpsCameraMovementController : MonoBehaviour
         if (clampInDegrees.y < 360)
             _mouseAbsolute.y = Mathf.Clamp(_mouseAbsolute.y, -clampInDegrees.y * 0.5f, clampInDegrees.y * 0.5f);
 
-        transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
+        _transform.localRotation = Quaternion.AngleAxis(-_mouseAbsolute.y, targetOrientation * Vector3.right) * targetOrientation;
 
         // If there's a character body that acts as a parent to the camera
         if (characterBody)
@@ -80,8 +96,8 @@ public class FpsCameraMovementController : MonoBehaviour
         }
         else
         {
-            var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, transform.InverseTransformDirection(Vector3.up));
-            transform.localRotation *= yRotation;
+            var yRotation = Quaternion.AngleAxis(_mouseAbsolute.x, _transform.InverseTransformDirection(Vector3.up));
+            _transform.localRotation *= yRotation;
         }
     }
 }

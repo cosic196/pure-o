@@ -48,6 +48,7 @@ public class PauseController : MonoBehaviour {
         {
             audioSource.UnPause();
         }
+        Cursor.visible = false;
         Time.timeScale = 1f;
     }
 }

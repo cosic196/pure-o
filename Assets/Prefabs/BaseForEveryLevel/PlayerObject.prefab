@@ -357,7 +357,6 @@ GameObject:
   - component: {fileID: 4985867575333934}
   - component: {fileID: 114558327732509922}
   - component: {fileID: 114787617054835292}
-  - component: {fileID: 114581274109183452}
   - component: {fileID: 114707877895359874}
   - component: {fileID: 114644116397689520}
   - component: {fileID: 114079438106879836}
@@ -1886,6 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0
+  _bwShader: {fileID: 4800000, guid: 0e1552d26cfee6c489599e05b12fd977, type: 3}
 --- !u!114 &114252062122632338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1953,20 +1953,6 @@ MonoBehaviour:
   _moveRightKey: d
   _shootKey: mouse 0
   _pauseKey: f
---- !u!114 &114581274109183452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1773729839117318}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f6a760402f33447a75375b68133ed8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootInfo:
-    damage: 1
-    pointOfHit: {x: 0, y: 0, z: 0}
 --- !u!114 &114644116397689520
 MonoBehaviour:
   m_ObjectHideFlags: 1

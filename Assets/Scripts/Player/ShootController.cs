@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SonicBloom.Koreo;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,12 +20,20 @@ public class ShootController : MonoBehaviour {
 	void Start () {
         SetCurrentPosition(Position.Center);
         _notesInRange = new Queue<NoteInfo>();
+        #if UNITY_ANDROID || UNITY_IOS
+        Koreographer.Instance.RegisterForEvents("test", AutoShoot);
+        #endif
         EventManager.StartListening("PressedShoot", Shoot);
         EventManager.StartListening("NoteInRange", AddNote);
         EventManager.StartListening("NoteOutOfRange", RemoveNote);
         EventManager.StartListening("PressedRight", () => { SetCurrentPosition(Position.Right); });
         EventManager.StartListening("PressedLeft", () => { SetCurrentPosition(Position.Left); });
         EventManager.StartListening("PressedCenter", () => { SetCurrentPosition(Position.Center); });
+    }
+
+    private void AutoShoot(KoreographyEvent koreoEvent)
+    {
+        Shoot();
     }
 
     private void Shoot()
@@ -40,7 +49,9 @@ public class ShootController : MonoBehaviour {
             NoteInfo currentNote = _notesInRange.Dequeue();
             if(currentNote.position != _currentPosition)
             {
+                #if UNITY_STANDALONE
                 EventManager.TriggerEvent("OutOfRhythmShot");
+                #endif
                 return;
             }
             EventManager.TriggerEvent("NoteShot", JsonUtility.ToJson(currentNote));

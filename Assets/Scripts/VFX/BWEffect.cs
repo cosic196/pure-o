@@ -5,11 +5,13 @@ public class BWEffect : MonoBehaviour
 {
     public float intensity;
     private Material material;
+    [SerializeField]
+    private Shader _bwShader;
 
     // Creates a private material used to the effect
     void Awake()
     {
-        material = new Material(Shader.Find("Hidden/BWDiffuse"));
+        material = new Material(_bwShader);
     }
 
     // Postprocess the image

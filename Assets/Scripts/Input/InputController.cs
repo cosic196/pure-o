@@ -18,6 +18,28 @@ public class InputController : MonoBehaviour {
     }
 
     void Update () {
+#if UNITY_ANDROID || UNITY_IOS
+        if(Input.touchCount > 0)
+        {
+            var touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
+            {
+                if (touch.position.x > Screen.width / 2)
+                {
+                    EventManager.TriggerEvent("PressedRight");
+                }
+                else
+                {
+                    EventManager.TriggerEvent("PressedLeft");
+                }
+            }
+        }
+        if(Input.GetMouseButtonUp(0))
+        {
+            EventManager.TriggerEvent("PressedCenter");
+        }
+        return;
+#endif
         //Pausing
         if(Input.GetKeyDown(_pauseKey))
         {
