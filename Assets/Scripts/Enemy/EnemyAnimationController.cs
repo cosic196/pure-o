@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(GameObjectEventManager))]
-[RequireComponent(typeof(Renderer))]
 public class EnemyAnimationController : MonoBehaviour {
 
     private GameObjectEventManager _gameObjectEventManager;
-    private Renderer _renderer;
+    private Renderer[] _renderers;
 
     private MaterialPropertyBlock _propertyBlock;
     private float _timer = 0f;
@@ -21,11 +20,14 @@ public class EnemyAnimationController : MonoBehaviour {
 
 	void Start () {
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
-        _renderer = GetComponent<Renderer>();
+        _renderers = GetComponentsInChildren<Renderer>();
 
         _propertyBlock = new MaterialPropertyBlock();
-        _renderer.GetPropertyBlock(_propertyBlock);
-        _startCrossSize = _renderer.sharedMaterial.GetFloat(_crossSizeVarName);
+        for (int i = 0; i < _renderers.Length; i++)
+        {
+            _renderers[i].GetPropertyBlock(_propertyBlock);
+        }
+        _startCrossSize = _renderers[0].sharedMaterial.GetFloat(_crossSizeVarName);
 
         _gameObjectEventManager.StartListening("Died", AnimateDeath);
         _gameObjectEventManager.StartListening("Damaged", Damaged);
@@ -53,22 +55,31 @@ public class EnemyAnimationController : MonoBehaviour {
         if(_timer < 1f)
         {
             _timer += CustomTime.GetDeltaTime() * _speed;
-            _renderer.GetPropertyBlock(_propertyBlock);
-            _propertyBlock.SetFloat(_crossSizeVarName, Mathf.Lerp(_startCrossSize, _damagedCrossSize, _animationCurve.Evaluate(_timer)));
-            _renderer.SetPropertyBlock(_propertyBlock);
+            for (int i = 0; i < _renderers.Length; i++)
+            {
+                _renderers[i].GetPropertyBlock(_propertyBlock);
+                _propertyBlock.SetFloat(_crossSizeVarName, Mathf.Lerp(_startCrossSize, _damagedCrossSize, _animationCurve.Evaluate(_timer)));
+                _renderers[i].SetPropertyBlock(_propertyBlock);
+            }
         }
         else if (_timer > 1f)
         {
             _timer = 1f;
-            _renderer.GetPropertyBlock(_propertyBlock);
-            _propertyBlock.SetFloat(_crossSizeVarName, _damagedCrossSize);
-            _renderer.SetPropertyBlock(_propertyBlock);
+            for (int i = 0; i < _renderers.Length; i++)
+            {
+                _renderers[i].GetPropertyBlock(_propertyBlock);
+                _propertyBlock.SetFloat(_crossSizeVarName, _damagedCrossSize);
+                _renderers[i].SetPropertyBlock(_propertyBlock);
+            }
         }
     }
 
     private void AnimateDeath()
     {
-        _renderer.enabled = false;
+        for (int i = 0; i < _renderers.Length; i++)
+        {
+            _renderers[i].enabled = false;
+        }
     }
 	
 }

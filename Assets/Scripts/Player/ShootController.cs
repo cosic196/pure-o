@@ -66,6 +66,8 @@ public class ShootController : MonoBehaviour {
             if (hit.transform.tag == "Shootable")
             {
                 _shootInfo.pointOfHit = hit.point;
+                _shootInfo.direction = ray.direction;
+                _shootInfo.normal = hit.normal;
                 hit.transform.GetComponent<Shootable>().Shot(JsonUtility.ToJson(_shootInfo));
             }
             else
@@ -100,4 +102,6 @@ public class ShootInfo
 {
     public int damage;
     public Vector3 pointOfHit;
+    public Vector3 direction;
+    public Vector3 normal;
 }

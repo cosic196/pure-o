@@ -22,10 +22,8 @@ public class EnemyBloodAnimationController : MonoBehaviour {
 
     void StartShotAnimation(string vectorJson)
     {
-        Vector3 position = JsonUtility.FromJson<ShootInfo>(vectorJson).pointOfHit;
-        var particleSystem = Instantiate(_shotParticlePrefab, position, Quaternion.identity, _transform);
-        var particleSystem2 = Instantiate(_shotParticlePrefab2, position, Quaternion.identity, _transform);
-        particleSystem.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
-        particleSystem2.GetComponent<Transform>().localRotation = new Quaternion(0, 0, 0, 0);
+        ShootInfo shootInfo = JsonUtility.FromJson<ShootInfo>(vectorJson);
+        Instantiate(_shotParticlePrefab, shootInfo.pointOfHit, Quaternion.LookRotation(shootInfo.normal), _transform);
+        Instantiate(_shotParticlePrefab2, shootInfo.pointOfHit, Quaternion.LookRotation(shootInfo.normal));
     }
 }

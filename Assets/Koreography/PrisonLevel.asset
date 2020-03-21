@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: PrisonLevel
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: 19a8ebf76aa4b7c439ba053ad7bc1f38, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: New Section
+    startSample: 0
+    samplesPerBeat: 16537.5
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  mTracks:
+  - {fileID: 11400000, guid: e1d39d8d654504d4994babe2de224e4b, type: 2}
+  - {fileID: 11400000, guid: c2ef236d3bfc4dd40831abdd705ec89b, type: 2}
+  - {fileID: 11400000, guid: 81f324e03907ccc4f8409a48f52bee80, type: 2}
+  - {fileID: 11400000, guid: 35efa8f30f17f454391caafd0459283e, type: 2}
+  - {fileID: 11400000, guid: eab702ea69e865843878f7db456b0516, type: 2}

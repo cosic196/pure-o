@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(GameObjectEventManager))]
-[RequireComponent(typeof(Collider))]
 public class EnemyHealthController : MonoBehaviour {
 
-    private Collider _collider;
+    private Collider[] _colliders;
     private GameObjectEventManager _gameObjectEventManager;
     [SerializeField]
     private int _hp;
     private bool _dead = false;
     
     void Start () {
-        _collider = GetComponent<Collider>();
+        _colliders = GetComponentsInChildren<Collider>();
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
         _gameObjectEventManager.StartListening("Shot", Damaged);
         EventManager.StartListening("EnemiesDie", Died);
@@ -38,7 +37,10 @@ public class EnemyHealthController : MonoBehaviour {
     {
         if(_dead)
         {
-            _collider.enabled = false;
+            for (int i = 0; i < _colliders.Length; i++)
+            {
+                _colliders[i].enabled = false;
+            }
             _gameObjectEventManager.TriggerEvent("Died");
             _dead = false;
         }

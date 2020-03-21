@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: PrisonLevelNotes
+  m_EditorClassIdentifier: 
+  mEventID: test
+  mEventList:
+  - mStartSample: 330750
+    mEndSample: 330750
+  - mStartSample: 463050
+    mEndSample: 463050
+  - mStartSample: 595350
+    mEndSample: 595350
+  - mStartSample: 727650
+    mEndSample: 727650
+  - mStartSample: 859950
+    mEndSample: 859950
+  - mStartSample: 893025
+    mEndSample: 893025
+  - mStartSample: 992250
+    mEndSample: 992250
+  - mStartSample: 1025325
+    mEndSample: 1025325
+  - mStartSample: 1124550
+    mEndSample: 1124550
+  - mStartSample: 1157625
+    mEndSample: 1157625
+  - mStartSample: 1256850
+    mEndSample: 1256850
+  - mStartSample: 1289925
+    mEndSample: 1289925
+  - mStartSample: 1323000
+    mEndSample: 1323000
+  - mStartSample: 1521450
+    mEndSample: 1521450
+  - mStartSample: 1537987
+    mEndSample: 1537987
+  - mStartSample: 1554525
+    mEndSample: 1554525
+  - mStartSample: 1571062
+    mEndSample: 1571062
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.IntPayload
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads: []
+  _FloatPayloadIdxs: 
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads:
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 1
+  - mIntVal: -1
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 1
+  - mIntVal: 1
+  - mIntVal: -1
+  - mIntVal: -1
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 0
+  - mIntVal: 0
+  _IntPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads: []
+  _TextPayloadIdxs: 
