@@ -4,7 +4,7 @@ using UnityEngine;
 public class PositionController : MonoBehaviour {
 
     [SerializeField]
-    private List<Transform> _movePointsList;
+    private Transform _movePointsParent;
     private Queue<Transform> _movePoints;
     [SerializeField]
     private float _speed;
@@ -16,9 +16,9 @@ public class PositionController : MonoBehaviour {
 
 	void Start () {
         _movePoints = new Queue<Transform>();
-        foreach(var point in _movePointsList)
+        for(int i = 0; i < _movePointsParent.childCount; i++)
         {
-            _movePoints.Enqueue(point);
+            _movePoints.Enqueue(_movePointsParent.GetChild(i));
         }
         _transform = GetComponent<Transform>();
         _goalTransform = _transform;

@@ -11,35 +11,45 @@ MonoBehaviour:
   m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
   m_Name: EnemyMove
   m_EditorClassIdentifier: 
-  mEventID: EnemyMove
+  mEventID: EnemyAppear
   mEventList:
-  - mStartSample: 264600
-    mEndSample: 264600
-  - mStartSample: 396900
-    mEndSample: 396900
   - mStartSample: 529200
     mEndSample: 529200
-  - mStartSample: 926100
-    mEndSample: 926100
-  - mStartSample: 959175
-    mEndSample: 959175
-  - mStartSample: 1058400
-    mEndSample: 1058400
-  - mStartSample: 1091475
-    mEndSample: 1091475
+  - mStartSample: 661500
+    mEndSample: 661500
+  - mStartSample: 793800
+    mEndSample: 793800
   - mStartSample: 1190700
     mEndSample: 1190700
   - mStartSample: 1223775
     mEndSample: 1223775
-  _SerializedPayloadTypes: []
+  - mStartSample: 1323000
+    mEndSample: 1323000
+  - mStartSample: 1356075
+    mEndSample: 1356075
+  - mStartSample: 1455300
+    mEndSample: 1455300
+  - mStartSample: 1488375
+    mEndSample: 1488375
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.FloatPayload
   _AssetPayloads: []
   _AssetPayloadIdxs: 
   _ColorPayloads: []
   _ColorPayloadIdxs: 
   _CurvePayloads: []
   _CurvePayloadIdxs: 
-  _FloatPayloads: []
-  _FloatPayloadIdxs: 
+  _FloatPayloads:
+  - mFloatVal: 0
+  - mFloatVal: 1
+  - mFloatVal: 2
+  - mFloatVal: 3
+  - mFloatVal: 4
+  - mFloatVal: 5
+  - mFloatVal: 6
+  - mFloatVal: 7
+  - mFloatVal: 8
+  _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000
   _GradientPayloads: []
   _GradientPayloadIdxs: 
   _IntPayloads: []

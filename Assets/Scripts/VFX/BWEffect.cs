@@ -1,30 +1,35 @@
 ﻿using UnityEngine;
 
-[ExecuteInEditMode]
 public class BWEffect : MonoBehaviour
 {
     public float intensity;
-    private Material material;
-    [SerializeField]
-    private Shader _bwShader;
+    public Material PostprocessMaterial;
+    public Material SimpleRender;
 
-    // Creates a private material used to the effect
-    void Awake()
+    public RenderTexture CameraRenderTexture;
+    public RenderTexture Buffer;
+
+    public void OnEnable()
     {
-        material = new Material(_bwShader);
+        intensity = 0;
+        PostprocessMaterial.SetFloat("_bwBlend", intensity);
+        CameraRenderTexture = new RenderTexture(Screen.width, Screen.height, 24);
+        Buffer = new RenderTexture(Screen.width, Screen.height, 24);
+
+        Camera.main.targetTexture = CameraRenderTexture;
     }
 
-    // Postprocess the image
-    void OnRenderImage(RenderTexture source, RenderTexture destination)
+    void OnPostRender()
     {
-        if (intensity == 0)
-        {
-            Graphics.Blit(source, destination);
-            return;
-        }
+        Graphics.SetRenderTarget(Buffer);
+        GL.Clear(true, true, Color.black);
 
-        material.SetFloat("_bwBlend", intensity);
-        Graphics.Blit(source, destination, material);
+        Graphics.SetRenderTarget(Buffer.colorBuffer, CameraRenderTexture.depthBuffer);
+        Graphics.Blit(CameraRenderTexture, SimpleRender);
+        Graphics.Blit(CameraRenderTexture, PostprocessMaterial);
+
+        RenderTexture.active = null;
+        Graphics.Blit(Buffer, SimpleRender);
     }
 
     private void Start()
@@ -37,5 +42,6 @@ public class BWEffect : MonoBehaviour
         float currentHp = float.Parse(hpSlashMaxHp.Split('/')[0]);
         float maxHp = float.Parse(hpSlashMaxHp.Split('/')[1]);
         intensity = 1 - currentHp / maxHp;
+        PostprocessMaterial.SetFloat("_bwBlend", intensity);
     }
 }

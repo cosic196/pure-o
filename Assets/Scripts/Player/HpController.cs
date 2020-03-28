@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class HpController : MonoBehaviour {
 
@@ -6,9 +7,13 @@ public class HpController : MonoBehaviour {
     private float _maxHp;
     private float _currentHp;
     [SerializeField]
-    private float _regenerationSpeed;
+    private float _noteHitRegen;
     [SerializeField]
     private float _missedNoteDamage;
+    [SerializeField]
+    private bool _autoRegen = false;
+    [SerializeField]
+    private float _regenerationSpeed;
     private bool _dead = false;
 
     public float CurrentHp
@@ -35,10 +40,20 @@ public class HpController : MonoBehaviour {
     
 	void Start () {
         EventManager.StartListening("NoteOutOfRange", Damaged);
+        EventManager.StartListening("NoteShot", Regenerate);
         EventManager.StartListening("OutOfRhythmShot", DamagedNoInput);
         _currentHp = _maxHp;
 	}
-	
+
+    private void Regenerate(string json)
+    {
+        if(CurrentHp == _maxHp)
+        {
+            return;
+        }
+        CurrentHp += _noteHitRegen;
+    }
+
     private void Damaged(string noteInfo)
     {
         if (!enabled)
@@ -70,6 +85,10 @@ public class HpController : MonoBehaviour {
     }
 
     void Update () {
+        if(!_autoRegen)
+        {
+            return;
+        }
 		if(CurrentHp < _maxHp)
         {
             CurrentHp += _regenerationSpeed * CustomTime.GetDeltaTime();

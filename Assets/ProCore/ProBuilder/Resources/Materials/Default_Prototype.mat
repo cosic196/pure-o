@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Default_Prototype
-  m_Shader: {fileID: 4800000, guid: d7a0ea7bc5ece2e4eb5f50dd1ef8e005, type: 3}
-  m_ShaderKeywords: _EMISSION _GLOSSYREFLECTIONS_OFF _SPECULARHIGHLIGHTS_OFF
+  m_Shader: {fileID: 4800000, guid: 682cba1d51f438449ac7c2af05fc108f, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,6 +44,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _FourthTex:
         m_Texture: {fileID: 2800000, guid: 6b2e75e162ed72c428ddc9ca9cac6452, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GIAlbedoTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -107,12 +111,13 @@ Material:
     - _Wavelength: 0.17857142
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+    - _Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     - _Color1: {r: 0.67910445, g: 0.67910445, b: 0.67910445, a: 1}
     - _Color2: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
+    - _GIAlbedoColor: {r: 0.23529434, g: 0, b: 1, a: 1}
     - _Indicator: {r: 1, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     - _SpecularColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

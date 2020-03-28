@@ -13,10 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: PlayerMove
   mEventList:
-  - mStartSample: 380362
-    mEndSample: 380362
-  - mStartSample: 512662
-    mEndSample: 512662
   - mStartSample: 644962
     mEndSample: 644962
   - mStartSample: 777262
@@ -29,12 +25,52 @@ MonoBehaviour:
     mEndSample: 1174162
   - mStartSample: 1306462
     mEndSample: 1306462
-  - mStartSample: 1389150
-    mEndSample: 1389150
-  - mStartSample: 1455300
-    mEndSample: 1455300
-  - mStartSample: 1521450
-    mEndSample: 1521450
+  - mStartSample: 1438762
+    mEndSample: 1438762
+  - mStartSample: 1571062
+    mEndSample: 1571062
+  - mStartSample: 1653750
+    mEndSample: 1653750
+  - mStartSample: 1719900
+    mEndSample: 1719900
+  - mStartSample: 1786050
+    mEndSample: 1786050
+  - mStartSample: 1835662
+    mEndSample: 1835662
+  - mStartSample: 1951425
+    mEndSample: 1951425
+  - mStartSample: 2083725
+    mEndSample: 2083725
+  - mStartSample: 2216025
+    mEndSample: 2216025
+  - mStartSample: 2348325
+    mEndSample: 2348325
+  - mStartSample: 2480625
+    mEndSample: 2480625
+  - mStartSample: 2612925
+    mEndSample: 2612925
+  - mStartSample: 2745225
+    mEndSample: 2745225
+  - mStartSample: 2877525
+    mEndSample: 2877525
+  - mStartSample: 3009825
+    mEndSample: 3009825
+  - mStartSample: 3142125
+    mEndSample: 3142125
+  - mStartSample: 3274425
+    mEndSample: 3274425
+  - mStartSample: 3406725
+    mEndSample: 3406725
+  - mStartSample: 3539025
+    mEndSample: 3539025
+  - mStartSample: 3671325
+    mEndSample: 3671325
+  - mStartSample: 3803625
+    mEndSample: 3803625
+  - mStartSample: 3935925
+    mEndSample: 3935925
+  - mStartSample: 4068225
+    mEndSample: 4068225
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 

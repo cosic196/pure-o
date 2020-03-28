@@ -1,24 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyBloodAnimationController : MonoBehaviour {
 
     [SerializeField]
-    private GameObject _shotParticlePrefab, _shotParticlePrefab2 ,_diedParticlePrefab;
+    private GameObject _shotParticlePrefab, _shotParticlePrefab2;
     private GameObjectEventManager _gameObjectEventManager;
     private Transform _transform;
     
 	void Start () {
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
         _gameObjectEventManager.StartListening("Shot", StartShotAnimation);
-        _gameObjectEventManager.StartListening("Died", StartDiedAnimation);
         _transform = GetComponent<Transform>();
 	}
-
-    private void StartDiedAnimation()
-    {
-        var particleSystem = Instantiate(_diedParticlePrefab, _transform.position, Quaternion.identity);
-        particleSystem.GetComponent<Transform>().rotation = _transform.rotation;
-    }
 
     void StartShotAnimation(string vectorJson)
     {

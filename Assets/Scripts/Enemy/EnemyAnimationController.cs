@@ -20,7 +20,7 @@ public class EnemyAnimationController : MonoBehaviour {
 
 	void Start () {
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();
-        _renderers = GetComponentsInChildren<Renderer>();
+        _renderers = GetComponentsInChildren<Renderer>(true);
 
         _propertyBlock = new MaterialPropertyBlock();
         for (int i = 0; i < _renderers.Length; i++)

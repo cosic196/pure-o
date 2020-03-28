@@ -13,24 +13,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: EnemyDeath
   mEventList:
-  - mStartSample: 363825
-    mEndSample: 363825
-  - mStartSample: 496125
-    mEndSample: 496125
   - mStartSample: 628425
     mEndSample: 628425
   - mStartSample: 760725
     mEndSample: 760725
-  - mStartSample: 909562
-    mEndSample: 909562
-  - mStartSample: 1041862
-    mEndSample: 1041862
+  - mStartSample: 893025
+    mEndSample: 893025
+  - mStartSample: 1025325
+    mEndSample: 1025325
   - mStartSample: 1174162
     mEndSample: 1174162
   - mStartSample: 1306462
     mEndSample: 1306462
-  - mStartSample: 1389150
-    mEndSample: 1389150
+  - mStartSample: 1438762
+    mEndSample: 1438762
+  - mStartSample: 1571062
+    mEndSample: 1571062
+  - mStartSample: 1653750
+    mEndSample: 1653750
+  - mStartSample: 1967962
+    mEndSample: 1967962
+  - mStartSample: 2100262
+    mEndSample: 2100262
+  - mStartSample: 2232562
+    mEndSample: 2232562
+  - mStartSample: 2364862
+    mEndSample: 2364862
+  - mStartSample: 2497162
+    mEndSample: 2497162
+  - mStartSample: 2629462
+    mEndSample: 2629462
+  - mStartSample: 2761762
+    mEndSample: 2761762
+  - mStartSample: 2894062
+    mEndSample: 2894062
+  - mStartSample: 3026362
+    mEndSample: 3026362
+  - mStartSample: 3158662
+    mEndSample: 3158662
+  - mStartSample: 3290962
+    mEndSample: 3290962
+  - mStartSample: 3423262
+    mEndSample: 3423262
+  - mStartSample: 3555562
+    mEndSample: 3555562
+  - mStartSample: 3687862
+    mEndSample: 3687862
+  - mStartSample: 3820162
+    mEndSample: 3820162
+  - mStartSample: 3952462
+    mEndSample: 3952462
+  - mStartSample: 4233600
+    mEndSample: 4233600
+  - mStartSample: 4498200
+    mEndSample: 4498200
+  - mStartSample: 4630500
+    mEndSample: 4630500
+  - mStartSample: 4762800
+    mEndSample: 4762800
+  - mStartSample: 4895100
+    mEndSample: 4895100
+  - mStartSample: 5027400
+    mEndSample: 5027400
+  - mStartSample: 5159700
+    mEndSample: 5159700
+  - mStartSample: 5292000
+    mEndSample: 5292000
+  - mStartSample: 5424300
+    mEndSample: 5424300
+  - mStartSample: 5556600
+    mEndSample: 5556600
+  - mStartSample: 5688900
+    mEndSample: 5688900
+  - mStartSample: 5821200
+    mEndSample: 5821200
+  - mStartSample: 6085800
+    mEndSample: 6085800
   _SerializedPayloadTypes: []
   _AssetPayloads: []
   _AssetPayloadIdxs: 
