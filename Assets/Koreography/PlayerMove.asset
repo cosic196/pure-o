@@ -47,8 +47,8 @@ MonoBehaviour:
     mEndSample: 2348325
   - mStartSample: 2480625
     mEndSample: 2480625
-  - mStartSample: 2612925
-    mEndSample: 2612925
+  - mStartSample: 2646000
+    mEndSample: 2646000
   - mStartSample: 2745225
     mEndSample: 2745225
   - mStartSample: 2877525
@@ -69,17 +69,71 @@ MonoBehaviour:
     mEndSample: 3803625
   - mStartSample: 3935925
     mEndSample: 3935925
-  - mStartSample: 4068225
-    mEndSample: 4068225
-  _SerializedPayloadTypes: []
+  - mStartSample: 4225331
+    mEndSample: 4225331
+  - mStartSample: 4489931
+    mEndSample: 4489931
+  - mStartSample: 4754531
+    mEndSample: 4754531
+  - mStartSample: 5019131
+    mEndSample: 5019131
+  - mStartSample: 5283731
+    mEndSample: 5283731
+  - mStartSample: 5548331
+    mEndSample: 5548331
+  - mStartSample: 5812931
+    mEndSample: 5812931
+  - mStartSample: 6085800
+    mEndSample: 6085800
+  - mStartSample: 6135412
+    mEndSample: 6135412
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.FloatPayload
   _AssetPayloads: []
   _AssetPayloadIdxs: 
   _ColorPayloads: []
   _ColorPayloadIdxs: 
   _CurvePayloads: []
   _CurvePayloadIdxs: 
-  _FloatPayloads: []
-  _FloatPayloadIdxs: 
+  _FloatPayloads:
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 1
+  - mFloatVal: 1
+  - mFloatVal: 1
+  - mFloatVal: 1
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: 4
+  - mFloatVal: -0.2
+  - mFloatVal: 2
+  - mFloatVal: -0.5
+  - mFloatVal: 2
+  - mFloatVal: 1
+  - mFloatVal: 0.2
+  _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f0000002000000021000000220000002300000024000000
   _GradientPayloads: []
   _GradientPayloadIdxs: 
   _IntPayloads: []

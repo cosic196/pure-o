@@ -19,6 +19,10 @@ MonoBehaviour:
     mEndSample: 661500
   - mStartSample: 793800
     mEndSample: 793800
+  - mStartSample: 926100
+    mEndSample: 926100
+  - mStartSample: 1058400
+    mEndSample: 1058400
   - mStartSample: 1190700
     mEndSample: 1190700
   - mStartSample: 1223775
@@ -31,6 +35,12 @@ MonoBehaviour:
     mEndSample: 1455300
   - mStartSample: 1488375
     mEndSample: 1488375
+  - mStartSample: 1835662
+    mEndSample: 1835662
+  - mStartSample: 1967962
+    mEndSample: 1967962
+  - mStartSample: 2100262
+    mEndSample: 2100262
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.FloatPayload
   _AssetPayloads: []
@@ -43,13 +53,18 @@ MonoBehaviour:
   - mFloatVal: 0
   - mFloatVal: 1
   - mFloatVal: 2
+  - mFloatVal: 2.1
+  - mFloatVal: 2.2
   - mFloatVal: 3
   - mFloatVal: 4
   - mFloatVal: 5
   - mFloatVal: 6
   - mFloatVal: 7
   - mFloatVal: 8
-  _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000
+  - mFloatVal: 9
+  - mFloatVal: 10
+  - mFloatVal: 11
+  _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
   _GradientPayloads: []
   _GradientPayloadIdxs: 
   _IntPayloads: []

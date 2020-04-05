@@ -11,7 +11,6 @@ public class TypewriterEffect : MonoBehaviour {
     [SerializeField]
     private bool _useUnscaledTime = true;
     private TextMeshProUGUI _tmPro;
-    private int _characterCounter = 0;
     private float _timer = -1f;
 
     private void Awake()

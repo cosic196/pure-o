@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour {
             else
                 returnValue = value;
 
-            _score = value;
+            _score = returnValue;
             EventManager.TriggerEvent("ScoreChanged", Score.ToString());
         }
     }

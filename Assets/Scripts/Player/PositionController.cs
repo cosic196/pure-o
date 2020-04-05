@@ -26,10 +26,11 @@ public class PositionController : MonoBehaviour {
         EventManager.StartListening("MoveToNextPoint", MoveToNextPoint);
 	}
 
-    private void MoveToNextPoint()
+    private void MoveToNextPoint(string speed)
     {
         if(_movePoints.Count > 0)
         {
+            _speed = Mathf.Abs(float.Parse(speed));
             _timer = 0f;
             _currentTransform = _goalTransform;
             _goalTransform = _movePoints.Dequeue();
@@ -40,7 +41,7 @@ public class PositionController : MonoBehaviour {
         //TODO remove after testing
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            EventManager.TriggerEvent("MoveToNextPoint");
+            EventManager.TriggerEvent("MoveToNextPoint", "4");
         }
 
         _transform.position = Vector3.Lerp(_currentTransform.position, _goalTransform.position, _animationCurve.Evaluate(_timer));

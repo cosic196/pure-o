@@ -47,6 +47,11 @@ public class FpsCameraMovementController : MonoBehaviour
         sensitivity = new Vector2(prefSensitivity, prefSensitivity);
     }
 
+    private void OnDisable()
+    {
+        _mouseAbsolute = Vector2.zero;
+    }
+
     void Update()
     {
 #if UNITY_ANDROID || UNITY_IOS

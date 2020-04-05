@@ -100,7 +100,7 @@ Shader "Gradient/UnlitGradientCastShadow" {
             CGPROGRAM
                 #pragma vertex vert
                 #pragma fragment frag
-                #pragma multi_compile_fwdadd_fullshadows
+                //#pragma multi_compile_fwdadd_fullshadows
                 #pragma fragmentoption ARB_fog_exp2
                 #pragma fragmentoption ARB_precision_hint_fastest
               

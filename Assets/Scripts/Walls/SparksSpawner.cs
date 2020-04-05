@@ -15,6 +15,6 @@ public class SparksSpawner : MonoBehaviour {
         Vector3 hitPosition = new Vector3(float.Parse(splitHitInfo[0]), float.Parse(splitHitInfo[1]), float.Parse(splitHitInfo[2]));
         Vector3 hitNormal = new Vector3(float.Parse(splitHitInfo[3]), float.Parse(splitHitInfo[4]), float.Parse(splitHitInfo[5]));
 
-        var sparks = Instantiate(_sparksPrefab, hitPosition, Quaternion.LookRotation(hitNormal));
+        Instantiate(_sparksPrefab, hitPosition, Quaternion.LookRotation(hitNormal));
     }
 }
