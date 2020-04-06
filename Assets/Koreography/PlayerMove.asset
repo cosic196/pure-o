@@ -103,10 +103,10 @@ MonoBehaviour:
   - mFloatVal: 4
   - mFloatVal: 4
   - mFloatVal: 4
-  - mFloatVal: 1
-  - mFloatVal: 1
-  - mFloatVal: 1
-  - mFloatVal: 1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
   - mFloatVal: 4
   - mFloatVal: 4
   - mFloatVal: 4
@@ -127,11 +127,11 @@ MonoBehaviour:
   - mFloatVal: 4
   - mFloatVal: 4
   - mFloatVal: 4
-  - mFloatVal: -0.2
+  - mFloatVal: -0.15
+  - mFloatVal: -0.15
+  - mFloatVal: -0.15
+  - mFloatVal: -0.15
   - mFloatVal: 2
-  - mFloatVal: -0.5
-  - mFloatVal: 2
-  - mFloatVal: 1
   - mFloatVal: 0.2
   _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f0000002000000021000000220000002300000024000000
   _GradientPayloads: []

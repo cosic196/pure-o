@@ -19,7 +19,9 @@ public class EnemyAppearController : MonoBehaviour {
     private List<Collider> _colliders;
     [SerializeField]
     private float _timeToAppear;
-    private float _timer;
+    [SerializeField]
+    private float _warmUpTime;
+    private float _appearTimer, _warmUpTimer;
     private GameObjectEventManager _gameObjectEventManager;
 
     void OnDrawGizmos()
@@ -61,7 +63,8 @@ public class EnemyAppearController : MonoBehaviour {
         {
             _colliders[i].gameObject.layer = 2;
         }
-        _timer = _timeToAppear;
+        _appearTimer = _timeToAppear;
+        _warmUpTimer = 0f;
         EventManager.StartListening("EnemiesAppearedKoreo", StartAppearingIfOnIndex);
     }
 
@@ -69,8 +72,9 @@ public class EnemyAppearController : MonoBehaviour {
     {
         if(float.Parse(indexString) == _appearIndex)
         {
+            gameObject.SetActive(true);
             _particleSystem.Play();
-            _timer = 0;
+            _appearTimer = 0;
             EventManager.StopListening("EnemiesAppearedKoreo", StartAppearingIfOnIndex);
             _gameObjectEventManager.TriggerEvent("Appeared", _appearIndex.ToString());
         }
@@ -89,14 +93,23 @@ public class EnemyAppearController : MonoBehaviour {
     }
 
 	void Update () {
-		if(_timer < _timeToAppear)
+		if(_appearTimer < _timeToAppear)
         {
-            _timer += CustomTime.GetDeltaTime();
+            _appearTimer += CustomTime.GetDeltaTime();
         }
-        else if(_timer > _timeToAppear)
+        else if(_appearTimer > _timeToAppear)
         {
             Appear();
-            _timer = _timeToAppear;
+            _appearTimer = _timeToAppear;
+        }
+        if(_warmUpTimer < _warmUpTime)
+        {
+            _warmUpTimer += CustomTime.GetDeltaTime();
+        }
+        else if(_warmUpTimer > _warmUpTime)
+        {
+            gameObject.SetActive(false);
+            _warmUpTimer = _warmUpTime;
         }
 	}
 }

@@ -15,6 +15,14 @@ MonoBehaviour:
   mEventList:
   - mStartSample: 1819125
     mEndSample: 1819125
+  - mStartSample: 2348325
+    mEndSample: 2348325
+  - mStartSample: 3489412
+    mEndSample: 3489412
+  - mStartSample: 3969000
+    mEndSample: 3969000
+  - mStartSample: 4514737
+    mEndSample: 4514737
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
@@ -33,4 +41,8 @@ MonoBehaviour:
   _SpectrumPayloadIdxs: 
   _TextPayloads:
   - mTextVal: 0-8
-  _TextPayloadIdxs: 00000000
+  - mTextVal: 9-11
+  - mTextVal: 18
+  - mTextVal: 12-26
+  - mTextVal: 27-29
+  _TextPayloadIdxs: 0000000001000000020000000300000004000000

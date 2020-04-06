@@ -67,26 +67,8 @@ MonoBehaviour:
     mEndSample: 4233600
   - mStartSample: 4498200
     mEndSample: 4498200
-  - mStartSample: 4630500
-    mEndSample: 4630500
   - mStartSample: 4762800
     mEndSample: 4762800
-  - mStartSample: 4895100
-    mEndSample: 4895100
-  - mStartSample: 5027400
-    mEndSample: 5027400
-  - mStartSample: 5159700
-    mEndSample: 5159700
-  - mStartSample: 5292000
-    mEndSample: 5292000
-  - mStartSample: 5424300
-    mEndSample: 5424300
-  - mStartSample: 5556600
-    mEndSample: 5556600
-  - mStartSample: 5688900
-    mEndSample: 5688900
-  - mStartSample: 5821200
-    mEndSample: 5821200
   - mStartSample: 6085800
     mEndSample: 6085800
   _SerializedPayloadTypes: []
