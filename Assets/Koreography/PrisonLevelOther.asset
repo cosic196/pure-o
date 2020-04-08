@@ -15,6 +15,10 @@ MonoBehaviour:
   mEventList:
   - mStartSample: 6118875
     mEndSample: 6118875
+  - mStartSample: 6135412
+    mEndSample: 6135412
+  - mStartSample: 6284250
+    mEndSample: 6284250
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
@@ -33,4 +37,6 @@ MonoBehaviour:
   _SpectrumPayloadIdxs: 
   _TextPayloads:
   - mTextVal: OpenDoor
-  _TextPayloadIdxs: 00000000
+  - mTextVal: LevelEnd
+  - mTextVal: ShowEndScore
+  _TextPayloadIdxs: 000000000100000002000000

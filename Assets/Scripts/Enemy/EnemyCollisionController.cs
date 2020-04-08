@@ -3,9 +3,9 @@
 [RequireComponent(typeof (GameObjectEventManager))]
 public class EnemyCollisionController : Shootable {
 
-    private GameObjectEventManager gameObjectEventManager;
+    internal GameObjectEventManager gameObjectEventManager;
 
-    private void Start()
+    internal void Start()
     {
         gameObjectEventManager = GetComponent<GameObjectEventManager>();
     }
@@ -13,5 +13,6 @@ public class EnemyCollisionController : Shootable {
     public override void Shot(string shootInfo)
     {
         gameObjectEventManager.TriggerEvent("Shot", shootInfo);
+        EventManager.TriggerEvent("AnEnemyWasShot");
     }
 }
