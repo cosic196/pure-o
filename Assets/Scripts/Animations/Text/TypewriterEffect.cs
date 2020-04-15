@@ -10,6 +10,8 @@ public class TypewriterEffect : MonoBehaviour {
     private float _speed;
     [SerializeField]
     private bool _useUnscaledTime = true;
+    [SerializeField]
+    private bool _playOnAwake = false;
     private TextMeshProUGUI _tmPro;
     private float _timer = -1f;
 
@@ -20,15 +22,25 @@ public class TypewriterEffect : MonoBehaviour {
     }
 
     void Start () {
-        if(string.IsNullOrEmpty(_eventName))
+        if (string.IsNullOrEmpty(_eventName))
         {
             _timer = 0f;
         }
         else
         {
-            EventManager.StartListening(_eventName, () => _timer = 0f);
+            if (_playOnAwake)
+            {
+                _timer = 0f;
+            }
+            EventManager.StartListening(_eventName, Play);
         }
 	}
+
+    public void Play()
+    {
+        _timer = 0f;
+        _tmPro.maxVisibleCharacters = 0;
+    }
 	
 	void Update () {
 		if(_tmPro.maxVisibleCharacters < _tmPro.text.Length)

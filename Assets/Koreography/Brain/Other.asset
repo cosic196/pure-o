@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: Other
+  m_EditorClassIdentifier: 
+  mEventID: Other
+  mEventList:
+  - mStartSample: 13926
+    mEndSample: 13926
+  - mStartSample: 41778
+    mEndSample: 41778
+  - mStartSample: 69631
+    mEndSample: 69631
+  - mStartSample: 97484
+    mEndSample: 97484
+  - mStartSample: 125336
+    mEndSample: 125336
+  - mStartSample: 153188
+    mEndSample: 153188
+  - mStartSample: 181041
+    mEndSample: 181041
+  - mStartSample: 208894
+    mEndSample: 208894
+  - mStartSample: 236747
+    mEndSample: 236747
+  - mStartSample: 264599
+    mEndSample: 264599
+  - mStartSample: 292452
+    mEndSample: 292452
+  - mStartSample: 320305
+    mEndSample: 320305
+  - mStartSample: 348157
+    mEndSample: 348157
+  - mStartSample: 376009
+    mEndSample: 376009
+  - mStartSample: 403862
+    mEndSample: 403862
+  - mStartSample: 431715
+    mEndSample: 431715
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.TextPayload
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads: []
+  _FloatPayloadIdxs: 
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads:
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  - mTextVal: StopMusicAfterDied
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000

@@ -11,7 +11,6 @@ public class BWEffect : MonoBehaviour
 
     public void OnEnable()
     {
-        intensity = 0;
         PostprocessMaterial.SetFloat("_bwBlend", intensity);
         CameraRenderTexture = new RenderTexture(Screen.width, Screen.height, 24);
         Buffer = new RenderTexture(Screen.width, Screen.height, 24);

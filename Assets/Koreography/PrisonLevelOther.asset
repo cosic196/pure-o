@@ -17,6 +17,8 @@ MonoBehaviour:
     mEndSample: 6118875
   - mStartSample: 6135412
     mEndSample: 6135412
+  - mStartSample: 6251175
+    mEndSample: 6251175
   - mStartSample: 6284250
     mEndSample: 6284250
   _SerializedPayloadTypes:
@@ -39,4 +41,5 @@ MonoBehaviour:
   - mTextVal: OpenDoor
   - mTextVal: LevelEnd
   - mTextVal: ShowEndScore
-  _TextPayloadIdxs: 000000000100000002000000
+  - mTextVal: ShowCursor
+  _TextPayloadIdxs: 00000000010000000200000003000000

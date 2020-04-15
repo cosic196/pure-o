@@ -669,7 +669,6 @@ GameObject:
   - component: {fileID: 82543057816879252}
   - component: {fileID: 114164734273036038}
   - component: {fileID: 114311096516361456}
-  - component: {fileID: 114170232782622850}
   - component: {fileID: 169925379764362894}
   - component: {fileID: 114432593987342348}
   - component: {fileID: 114368691048318920}
@@ -1434,22 +1433,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPlayOnAwake: 0
-  koreography: {fileID: 11400000, guid: 144ea2d5aca0e6e4ea0702c1b1e47dbc, type: 2}
+  koreography: {fileID: 11400000, guid: f791361723cf4244eb2065cab3c1c56d, type: 2}
   targetKoreographer: {fileID: 0}
---- !u!114 &114170232782622850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913302469388292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2815b6373dafafb4a85b29bd504068d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyWaypoints:
-  - enemyWaypointsList:
-    - {fileID: 0}
 --- !u!114 &114172044763010484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1462,7 +1447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadedKoreography:
-  - {fileID: 11400000, guid: 144ea2d5aca0e6e4ea0702c1b1e47dbc, type: 2}
+  - {fileID: 11400000, guid: f791361723cf4244eb2065cab3c1c56d, type: 2}
   eventDelayInSeconds: 0
 --- !u!114 &114208767500161364
 MonoBehaviour:
@@ -1758,8 +1743,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec52eac98b0afb419f61d0b9c700929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyDeathEventId: 
-  _simpleMusicPlayer: {fileID: 0}
+  _enemyDeathEventId: EnemyDeath
+  _playerMoveEventId: PlayerMove
+  _enemyAppearEventId: EnemyAppear
+  _enemyDisappearEventId: EnemyDisappear
+  _otherEventId: Other
 --- !u!114 &114315638197792212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2232,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolTag: Note
-  _koreoTag: test
+  _koreoTag: NoteSpawn
   _parentTransform: {fileID: 224270443894566534}
   _sideNoteXOffset: 37
   _notesToSpawn: 15
@@ -2371,7 +2359,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
 --- !u!114 &114457224163186934
 MonoBehaviour:
   m_ObjectHideFlags: 1
