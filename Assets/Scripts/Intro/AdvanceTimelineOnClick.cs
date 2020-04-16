@@ -10,14 +10,14 @@ public class AdvanceTimelineOnClick : MonoBehaviour {
     
 	void Start () {
         _playableDirector.Play();
-        _playableDirector.stopped += OnTimelineStopped;
+        EventManager.StartListening("EndIntro", EndIntro);
         EventManager.StartListening(_pausePipelineEvent, () =>
         {
             _playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(0);
         });
 	}
 
-    private void OnTimelineStopped(PlayableDirector obj)
+    private void EndIntro()
     {
         EventManager.TriggerEvent("FadeOutToBlack", "LoadNextLevel");
         EventManager.TriggerEvent("FadeOutMusic");

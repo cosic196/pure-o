@@ -13,38 +13,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: Other
   mEventList:
-  - mStartSample: 13926
-    mEndSample: 13926
-  - mStartSample: 41778
-    mEndSample: 41778
-  - mStartSample: 69631
-    mEndSample: 69631
-  - mStartSample: 97484
-    mEndSample: 97484
-  - mStartSample: 125336
-    mEndSample: 125336
-  - mStartSample: 153188
-    mEndSample: 153188
-  - mStartSample: 181041
-    mEndSample: 181041
-  - mStartSample: 208894
-    mEndSample: 208894
-  - mStartSample: 236747
-    mEndSample: 236747
-  - mStartSample: 264599
-    mEndSample: 264599
-  - mStartSample: 292452
-    mEndSample: 292452
-  - mStartSample: 320305
-    mEndSample: 320305
-  - mStartSample: 348157
-    mEndSample: 348157
-  - mStartSample: 376009
-    mEndSample: 376009
-  - mStartSample: 403862
-    mEndSample: 403862
-  - mStartSample: 431715
-    mEndSample: 431715
+  - mStartSample: 20889
+    mEndSample: 20889
+  - mStartSample: 48741
+    mEndSample: 48741
+  - mStartSample: 76594
+    mEndSample: 76594
+  - mStartSample: 104447
+    mEndSample: 104447
+  - mStartSample: 132299
+    mEndSample: 132299
+  - mStartSample: 160151
+    mEndSample: 160151
+  - mStartSample: 188004
+    mEndSample: 188004
+  - mStartSample: 215857
+    mEndSample: 215857
+  - mStartSample: 243710
+    mEndSample: 243710
+  - mStartSample: 271562
+    mEndSample: 271562
+  - mStartSample: 299415
+    mEndSample: 299415
+  - mStartSample: 327268
+    mEndSample: 327268
+  - mStartSample: 355120
+    mEndSample: 355120
+  - mStartSample: 382972
+    mEndSample: 382972
+  - mStartSample: 410825
+    mEndSample: 410825
+  - mStartSample: 438678
+    mEndSample: 438678
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
