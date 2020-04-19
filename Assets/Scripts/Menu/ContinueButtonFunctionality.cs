@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ContinueButtonFunctionality : MonoBehaviour {
 
@@ -8,13 +7,8 @@ public class ContinueButtonFunctionality : MonoBehaviour {
         EventManager.TriggerEvent("UnpauseStarted");
     }
 
-    public void ContinueToNextScene(string sceneName)
+    public void ContinueToNextScene()
     {
-        EventManager.StartListening("ContinueToNextScene", () =>
-        {
-            Time.timeScale = 1f;
-            SceneManager.LoadScene(sceneName);
-        });
-        EventManager.TriggerEvent("FadeOut", "ContinueToNextScene");
+        EventManager.TriggerEvent("FadeOut", "LoadNextLevel");
     }
 }

@@ -19,11 +19,17 @@ public class DialogueTextController : MonoBehaviour {
     private TextMeshProUGUI _dialogueTmPro;
     [SerializeField]
     private TextMeshProUGUI _nameTmPro;
+    [SerializeField]
+    private AudioSource _audioSource;
     [Space(20)]
     [SerializeField]
     private string _closeDialogueTrigger;
     [SerializeField]
     private bool _closeDialogueAfterLastLine;
+    [SerializeField]
+    private string _onCloseDialogue;
+    [SerializeField]
+    private bool _playAudioOnCloseDialogue;
 
     private TypewriterEffect _typewriterEffect;
     private int _dialoguePosition = 0;
@@ -61,6 +67,7 @@ public class DialogueTextController : MonoBehaviour {
         _dialogueTmPro.text = _dialogueLines[_dialoguePosition];
         _dialoguePosition++;
         _typewriterEffect.Play();
+        _audioSource.Play();
     }
 
     private void ChangeName()
@@ -75,6 +82,14 @@ public class DialogueTextController : MonoBehaviour {
 
     private void CloseDialogue()
     {
+        if(_playAudioOnCloseDialogue)
+        {
+            _audioSource.Play();
+        }
         _animator.SetTrigger("CloseDialogue");
+        if(!string.IsNullOrEmpty(_onCloseDialogue))
+        {
+            EventManager.TriggerEvent(_onCloseDialogue);
+        }
     }
 }

@@ -5,13 +5,15 @@ public class QuitButtonController : MonoBehaviour {
 
 	public void Quit()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        string activeScene = SceneManager.GetActiveScene().name;
+        if(activeScene == "LevelSelectScene" ||
+            activeScene == "BrainScene")
         {
             Application.Quit();
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("GameLoader");
             Time.timeScale = 1f;
         }
     }

@@ -30,6 +30,11 @@ public class ChangeImageColorOnTrigger : MonoBehaviour {
         {
             _startColor = _image.color;
         }
+        if(string.IsNullOrEmpty(_trigger))
+        {
+            _timer = 0f;
+            return;
+        }
         EventManager.StartListening(_trigger, () => { _timer = 0f; _triggerNext = ""; });
         EventManager.StartListening(_trigger, StartAndTrigger);
     }

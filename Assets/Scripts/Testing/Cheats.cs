@@ -20,10 +20,12 @@ public class Cheats : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.F3))
         {
             Time.timeScale += 0.1f;
+            Debug.Log(Time.timeScale);
         }
         if(Input.GetKeyDown(KeyCode.F2))
         {
             Time.timeScale -= 0.1f;
+            Debug.Log(Time.timeScale);
         }
         if(Input.GetKeyDown(KeyCode.F4))
         {

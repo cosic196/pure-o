@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: ecde1e4213a5933409ce5f9827d4bce9
+    path: Assets/Scenes/GameLoader.unity
+    guid: 5310e06faafa82e45ace73a2ebd6dd84
   - enabled: 1
-    path: Assets/Scenes/TestLevel.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/BrainScene.unity
+    guid: 452192035ba90c84aa8cfa75d811e182
+  - enabled: 1
+    path: Assets/Scenes/PrisonLevelBaked.unity
+    guid: b60382c7851020640b66b166e8170e99
+  - enabled: 1
+    path: Assets/Scenes/LevelSelectScene.unity
+    guid: fb69b033bf2ab9b45925af2717a7c086
   m_configObjects: {}

@@ -33,6 +33,7 @@ public class RotateOnTrigger : MonoBehaviour {
             _startRotation = _transform.localRotation;
         }
         EventManager.StartListening(_trigger, Rotate);
+        EventManager.StartListening(_trigger, RotateNoParam);
     }
 
     private void Rotate(string checkIfPositive)
@@ -47,6 +48,19 @@ public class RotateOnTrigger : MonoBehaviour {
                     _timer = 0f;
                     _startRotation = _transform.localRotation;
                 }
+            }
+        }
+    }
+
+    private void RotateNoParam()
+    {
+        if (_transform.localEulerAngles.x > _threshold || _transform.localEulerAngles.y > _threshold)
+        {
+            if (_transform.localEulerAngles.x < 360f - _threshold || _transform.localEulerAngles.y < 360f - _threshold)
+            {
+                _cameraController.enabled = false;
+                _timer = 0f;
+                _startRotation = _transform.localRotation;
             }
         }
     }

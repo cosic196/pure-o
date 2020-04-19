@@ -9,9 +9,19 @@ public class LoadNextLevelOnTrigger : MonoBehaviour {
     private string _trigger;
 
 	void Start () {
-        EventManager.StartListening(_trigger, () =>
-        {
-            SceneManager.LoadScene(_levelName);
-        });
+        EventManager.StartListening(_trigger, LoadLevelAsync);
+        EventManager.StartListening(_trigger, LoadLevelAsyncWithParam);
 	}
+
+    private void LoadLevelAsync()
+    {
+        EventManager.TriggerEvent("StartedLoadingNextLevel");
+        SceneManager.LoadSceneAsync(_levelName);
+    }
+
+    private void LoadLevelAsyncWithParam(string levelName)
+    {
+        EventManager.TriggerEvent("StartedLoadingNextLevel");
+        SceneManager.LoadSceneAsync(levelName);
+    }
 }

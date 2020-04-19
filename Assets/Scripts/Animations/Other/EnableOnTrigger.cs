@@ -11,11 +11,16 @@ public class EnableOnTrigger : MonoBehaviour {
     private float _delay = 0f;
     [SerializeField]
     private bool _useUnscaledTime = true;
+    [SerializeField]
+    private bool _playOnAwake = false;
     private float _timer;
 
 	void Start () {
         _timer = _delay;
-        EventManager.StartListening(_triggerName, StartEnable);
+        if (_playOnAwake)
+            StartEnable();
+        if(!string.IsNullOrEmpty(_triggerName))
+            EventManager.StartListening(_triggerName, StartEnable);
 	}
 	
 	void Update () {
