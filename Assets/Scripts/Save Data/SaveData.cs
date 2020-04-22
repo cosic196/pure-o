@@ -4,12 +4,18 @@
 public class SaveData {
 
     public List<Level> Levels;
-    public List<FamilyMember> FamilyMembers;
+    public List<FamilyMemberName> FamilyMembersAlive;
 
     public SaveData()
     {
         Levels = new List<Level>();
-        FamilyMembers = new List<FamilyMember>();
+        FamilyMembersAlive = new List<FamilyMemberName>
+        {
+            FamilyMemberName.Brother,
+            FamilyMemberName.Father,
+            FamilyMemberName.Mother,
+            FamilyMemberName.Sister
+        };
     }
 }
 
@@ -19,12 +25,20 @@ public class Level
     public string Name;
     public int Score;
     public bool Completed;
+    public FamilyMember FamilyMember;
 }
 
 [System.Serializable]
 public class FamilyMember
 {
-    public string Name;
+    public FamilyMemberName Name;
     public float Bond;
-    public bool Killed;
+}
+
+public enum FamilyMemberName
+{
+    Brother,
+    Sister,
+    Father,
+    Mother
 }

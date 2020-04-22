@@ -6,7 +6,7 @@ public class LevelCompleter : MonoBehaviour {
     [SerializeField]
     private string _level;
     [SerializeField]
-    private string _familyMember;
+    private FamilyMemberName _familyMemberName;
     [SerializeField]
     private float _bond;
     [SerializeField]
@@ -33,6 +33,11 @@ public class LevelCompleter : MonoBehaviour {
             {
                 level.Completed = true;
                 level.Score = _scoreManager.Score;
+                level.FamilyMember = new FamilyMember
+                {
+                    Bond = _bond,
+                    Name = _familyMemberName
+                };
                 foundAndModifiedLevel = true;
                 break;
             }
@@ -43,7 +48,12 @@ public class LevelCompleter : MonoBehaviour {
             {
                 Name = _level,
                 Completed = true,
-                Score = _scoreManager.Score
+                Score = _scoreManager.Score,
+                FamilyMember = new FamilyMember
+                {
+                    Bond = _bond,
+                    Name = _familyMemberName
+                }
             });
         }
         saveData.Levels.Add(new Level
@@ -52,27 +62,6 @@ public class LevelCompleter : MonoBehaviour {
             Name = _unlockLevel,
             Score = 0
         });
-
-
-        bool foundAndModifiedMember = false;
-        foreach (var familyMember in saveData.FamilyMembers)
-        {
-            if(familyMember.Name == _familyMember)
-            {
-                familyMember.Bond += _bond;
-                foundAndModifiedMember = true;
-                break;
-            }
-        }
-        if(!foundAndModifiedMember)
-        {
-            saveData.FamilyMembers.Add(new FamilyMember
-            {
-                Bond = _bond,
-                Killed = false,
-                Name = _familyMember
-            });
-        }
 
         SaveDataManager.Save(saveData);
     }
