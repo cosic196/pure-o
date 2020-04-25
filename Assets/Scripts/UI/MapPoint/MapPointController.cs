@@ -34,6 +34,11 @@ public class MapPointController : MonoBehaviour {
     public void Completed()
     {
         _completedCross.SetActive(true);
-        _button.interactable = false;
+        //_button.interactable = false;
+        var colors = _button.colors;
+        colors.normalColor = colors.disabledColor;
+        colors.pressedColor = colors.disabledColor;
+        colors.highlightedColor = colors.disabledColor;
+        _button.colors = colors;
     }
 }

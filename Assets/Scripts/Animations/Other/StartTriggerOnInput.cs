@@ -7,7 +7,7 @@ public class StartTriggerOnInput : MonoBehaviour {
     private List<string> _triggers;
 	
 	void Update () {
-		if(Input.anyKey)
+		if(Input.anyKeyDown)
         {
             foreach (var trigger in _triggers)
             {

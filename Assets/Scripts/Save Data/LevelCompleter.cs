@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelCompleter : MonoBehaviour {
@@ -13,6 +14,8 @@ public class LevelCompleter : MonoBehaviour {
     private ScoreManager _scoreManager;
     [SerializeField]
     private string _unlockLevel;
+    [SerializeField]
+    private List<string> _boyDialogue;
 
     private void Start()
     {
@@ -55,13 +58,14 @@ public class LevelCompleter : MonoBehaviour {
                     Name = _familyMemberName
                 }
             });
+            saveData.Levels.Add(new Level
+            {
+                Completed = false,
+                Name = _unlockLevel,
+                Score = 0
+            });
+            saveData.BoyDialogue = _boyDialogue;
         }
-        saveData.Levels.Add(new Level
-        {
-            Completed = false,
-            Name = _unlockLevel,
-            Score = 0
-        });
 
         SaveDataManager.Save(saveData);
     }

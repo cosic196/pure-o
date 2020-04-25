@@ -92,4 +92,9 @@ public class DialogueTextController : MonoBehaviour {
             EventManager.TriggerEvent(_onCloseDialogue);
         }
     }
+
+    public void AddDialogueLine(string newDialogueLine)
+    {
+        _dialogueLines.Add(newDialogueLine);
+    }
 }

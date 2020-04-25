@@ -5,6 +5,7 @@ public class SaveData {
 
     public List<Level> Levels;
     public List<FamilyMemberName> FamilyMembersAlive;
+    public List<string> BoyDialogue;
 
     public SaveData()
     {
@@ -15,6 +16,10 @@ public class SaveData {
             FamilyMemberName.Father,
             FamilyMemberName.Mother,
             FamilyMemberName.Sister
+        };
+        BoyDialogue = new List<string>
+        {
+            "Where should we go next?"
         };
     }
 }
