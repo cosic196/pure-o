@@ -24,6 +24,7 @@ public class EnemyAppearController : MonoBehaviour {
     private float _appearTimer, _warmUpTimer;
     private GameObjectEventManager _gameObjectEventManager;
 
+#if UNITY_EDITOR
     void OnDrawGizmos()
     {
         UnityEditor.Handles.BeginGUI();
@@ -52,6 +53,7 @@ public class EnemyAppearController : MonoBehaviour {
         }
         UnityEditor.Handles.EndGUI();
     }
+#endif
 
     void Start () {
         _gameObjectEventManager = GetComponent<GameObjectEventManager>();

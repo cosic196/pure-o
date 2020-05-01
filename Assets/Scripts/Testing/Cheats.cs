@@ -4,8 +4,16 @@ public class Cheats : MonoBehaviour {
 
     [SerializeField]
     private HpController _hpController;
-	
-	void Update () {
+
+    private void Awake()
+    {
+        if(!Debug.isDebugBuild)
+        {
+            enabled = false;
+        }
+    }
+
+    void Update () {
 		if(Input.GetKeyDown(KeyCode.F1))
         {
             if(_hpController.enabled)

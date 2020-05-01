@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class FPSDisplay : MonoBehaviour
 {
     float deltaTime = 0.0f;
+
+    private void Awake()
+    {
+        if(!Debug.isDebugBuild)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     void Update()
     {

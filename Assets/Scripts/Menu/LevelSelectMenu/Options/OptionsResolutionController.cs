@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +16,7 @@ public class OptionsResolutionController : MonoBehaviour, IOption {
     private FullScreenMode _selectedFullScreenMode;
 
     void Start () {
-        _resolutions = Screen.resolutions;
+        _resolutions = Screen.resolutions.Where(x => x.refreshRate >= 59).ToArray();
         Reset();
 	}
 
@@ -68,6 +69,6 @@ public class OptionsResolutionController : MonoBehaviour, IOption {
 
     private void WriteResolution(Resolution resolution)
     {
-        _resolutionValueText.text = resolution.width + " x " + resolution.height;
+        _resolutionValueText.text = resolution.width + " x " + resolution.height + " <color=#AAA>" + resolution.refreshRate + "hZ</color>";
     }
 }

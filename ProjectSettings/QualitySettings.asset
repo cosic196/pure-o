@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 1
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Low
@@ -18,7 +18,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    blendWeights: 1
+    skinWeights: 1
     textureQuality: 1
     anisotropicTextures: 0
     antiAliasing: 0
@@ -38,7 +38,9 @@ QualitySettings:
     particleRaycastBudget: 4
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
+    asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -53,7 +55,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    blendWeights: 2
+    skinWeights: 2
     textureQuality: 0
     anisotropicTextures: 0
     antiAliasing: 0
@@ -73,25 +75,27 @@ QualitySettings:
     particleRaycastBudget: 10
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
+    asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
-    name: VeryHigh
+    name: Very High
     pixelLightCount: 1
     shadows: 1
-    shadowResolution: 2
+    shadowResolution: 3
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 20
+    shadowDistance: 40
     shadowNearPlaneOffset: 0
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    blendWeights: 2
-    textureQuality: 1
+    skinWeights: 2
+    textureQuality: 0
     anisotropicTextures: 0
-    antiAliasing: 0
+    antiAliasing: 8
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -108,7 +112,9 @@ QualitySettings:
     particleRaycastBudget: 10
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
+    asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
   - serializedVersion: 2
@@ -123,7 +129,7 @@ QualitySettings:
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
-    blendWeights: 2
+    skinWeights: 2
     textureQuality: 1
     anisotropicTextures: 0
     antiAliasing: 0
@@ -143,7 +149,9 @@ QualitySettings:
     particleRaycastBudget: 10
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
+    asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Standalone
   m_PerPlatformDefaultQuality:
@@ -152,7 +160,7 @@ QualitySettings:
     Nintendo Switch: 1
     PS4: 1
     PSP2: 1
-    Standalone: 1
+    Standalone: 2
     Tizen: 1
     WebGL: 1
     WiiU: 1
