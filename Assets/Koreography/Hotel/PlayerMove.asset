@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: PlayerMove
   mEventList:
+  - mStartSample: 4410
+    mEndSample: 4410
   - mStartSample: 17640
-    mEndSample: 17640
-  - mStartSample: 35280
-    mEndSample: 987840
+    mEndSample: 1014300
   - mStartSample: 1017240
     mEndSample: 1105440
   - mStartSample: 1111320
