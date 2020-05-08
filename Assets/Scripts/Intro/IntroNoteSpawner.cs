@@ -76,6 +76,9 @@ public class IntroNoteSpawner : MonoBehaviour
 
     private void NoteTrigger(KoreographyEvent ev)
     {
+        #if UNITY_ANDROID || UNITY_IOS
+        EventManager.TriggerEvent("MobileNoteSpawned");
+        #endif
         if (_events.Count <= _eventNumber)
         {
             _eventNumber = 0;

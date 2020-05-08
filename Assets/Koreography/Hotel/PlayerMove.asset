@@ -1,0 +1,389 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: PlayerMove
+  m_EditorClassIdentifier: 
+  mEventID: PlayerMove
+  mEventList:
+  - mStartSample: 17640
+    mEndSample: 17640
+  - mStartSample: 35280
+    mEndSample: 987840
+  - mStartSample: 1017240
+    mEndSample: 1105440
+  - mStartSample: 1111320
+    mEndSample: 1111320
+  - mStartSample: 1199520
+    mEndSample: 1199520
+  - mStartSample: 1234800
+    mEndSample: 1234800
+  - mStartSample: 1270080
+    mEndSample: 1481760
+  - mStartSample: 1481760
+    mEndSample: 1481760
+  - mStartSample: 1517040
+    mEndSample: 1517040
+  - mStartSample: 1552320
+    mEndSample: 1764000
+  - mStartSample: 1764000
+    mEndSample: 1764000
+  - mStartSample: 1799280
+    mEndSample: 1799280
+  - mStartSample: 1834560
+    mEndSample: 2046240
+  - mStartSample: 2046240
+    mEndSample: 2046240
+  - mStartSample: 2081520
+    mEndSample: 2081520
+  - mStartSample: 2328480
+    mEndSample: 2328480
+  - mStartSample: 2363760
+    mEndSample: 2363760
+  - mStartSample: 2399040
+    mEndSample: 2610720
+  - mStartSample: 2610720
+    mEndSample: 2610720
+  - mStartSample: 2646000
+    mEndSample: 2646000
+  - mStartSample: 2892960
+    mEndSample: 2892960
+  - mStartSample: 2928240
+    mEndSample: 2928240
+  - mStartSample: 3175200
+    mEndSample: 3175200
+  - mStartSample: 3210480
+    mEndSample: 3210480
+  - mStartSample: 3316320
+    mEndSample: 3316320
+  - mStartSample: 3369240
+    mEndSample: 3369240
+  - mStartSample: 4515840
+    mEndSample: 5574240
+  - mStartSample: 5591880
+    mEndSample: 5591880
+  - mStartSample: 5644800
+    mEndSample: 5644800
+  - mStartSample: 5715360
+    mEndSample: 5715360
+  - mStartSample: 5785920
+    mEndSample: 5785920
+  - mStartSample: 5856480
+    mEndSample: 5856480
+  - mStartSample: 5927040
+    mEndSample: 5927040
+  - mStartSample: 5997600
+    mEndSample: 5997600
+  - mStartSample: 6068160
+    mEndSample: 6068160
+  - mStartSample: 6138720
+    mEndSample: 6138720
+  - mStartSample: 6209280
+    mEndSample: 6209280
+  - mStartSample: 6279840
+    mEndSample: 6279840
+  - mStartSample: 6350400
+    mEndSample: 6350400
+  - mStartSample: 6420960
+    mEndSample: 6420960
+  - mStartSample: 6491520
+    mEndSample: 6491520
+  - mStartSample: 6562080
+    mEndSample: 6562080
+  - mStartSample: 6632640
+    mEndSample: 6632640
+  - mStartSample: 6703200
+    mEndSample: 6703200
+  - mStartSample: 6773760
+    mEndSample: 6844320
+  - mStartSample: 6844320
+    mEndSample: 6914880
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.FloatPayload
+  - SonicBloom.Koreo.CurvePayload
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads:
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.7500152
+        outSlope: 0.7500152
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.80214304
+        value: 0.6016195
+        inSlope: 0.7500152
+        outSlope: 0.6887203
+        tangentMode: 5
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.32734677
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2.0134773
+        outSlope: 2.0134773
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  - mCurveData:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  _CurvePayloadIdxs: 010000000200000006000000090000000c000000110000001a0000002c0000002d000000
+  _FloatPayloads:
+  - mFloatVal: -2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 2
+  - mFloatVal: 8
+  - mFloatVal: 2
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  - mFloatVal: -1
+  _FloatPayloadIdxs: 0000000003000000040000000500000007000000080000000a0000000b0000000d0000000e0000000f0000001000000012000000130000001400000015000000160000001700000018000000190000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b000000
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads: []
+  _TextPayloadIdxs: 

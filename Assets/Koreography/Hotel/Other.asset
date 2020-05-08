@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: Other
+  m_EditorClassIdentifier: 
+  mEventID: Other
+  mEventList:
+  - mStartSample: 176400
+    mEndSample: 176400
+  - mStartSample: 388080
+    mEndSample: 388080
+  - mStartSample: 564480
+    mEndSample: 564480
+  - mStartSample: 740880
+    mEndSample: 740880
+  - mStartSample: 987840
+    mEndSample: 987840
+  - mStartSample: 1128960
+    mEndSample: 1128960
+  - mStartSample: 3351600
+    mEndSample: 3351600
+  - mStartSample: 3369240
+    mEndSample: 3369240
+  - mStartSample: 3386880
+    mEndSample: 3386880
+  - mStartSample: 3528000
+    mEndSample: 3528000
+  - mStartSample: 3669120
+    mEndSample: 3669120
+  - mStartSample: 3810240
+    mEndSample: 3810240
+  - mStartSample: 3951360
+    mEndSample: 3951360
+  - mStartSample: 4021920
+    mEndSample: 4021920
+  - mStartSample: 4092480
+    mEndSample: 4092480
+  - mStartSample: 4163040
+    mEndSample: 4163040
+  - mStartSample: 4233600
+    mEndSample: 4233600
+  - mStartSample: 4304160
+    mEndSample: 4304160
+  - mStartSample: 4374720
+    mEndSample: 4374720
+  - mStartSample: 4445280
+    mEndSample: 4445280
+  - mStartSample: 4480560
+    mEndSample: 4480560
+  - mStartSample: 5609520
+    mEndSample: 5609520
+  - mStartSample: 6703200
+    mEndSample: 6703200
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.TextPayload
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads: []
+  _FloatPayloadIdxs: 
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads:
+  - mTextVal: IntroAdvanceDialogue
+  - mTextVal: IntroAdvanceDialogue
+  - mTextVal: IntroAdvanceDialogue
+  - mTextVal: IntroAdvanceDialogue
+  - mTextVal: IntroOpenDoor
+  - mTextVal: IntroCloseDoor
+  - mTextVal: ElevatorBlack
+  - mTextVal: ChangeCameraClamp
+  - mTextVal: ElevatorEnter
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorChangeFloor
+  - mTextVal: ElevatorOpen
+  - mTextVal: ChangeCameraClamp
+  - mTextVal: EndLevelDisableCamera
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000110000001200000013000000140000001500000016000000

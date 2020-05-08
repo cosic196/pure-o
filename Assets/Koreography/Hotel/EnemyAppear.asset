@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: EnemyAppear
+  m_EditorClassIdentifier: 
+  mEventID: EnemyAppear
+  mEventList:
+  - mStartSample: 1093680
+    mEndSample: 1093680
+  - mStartSample: 1234800
+    mEndSample: 1234800
+  - mStartSample: 1305360
+    mEndSample: 1305360
+  - mStartSample: 1517040
+    mEndSample: 1517040
+  - mStartSample: 1587600
+    mEndSample: 1587600
+  - mStartSample: 1799280
+    mEndSample: 1799280
+  - mStartSample: 1869840
+    mEndSample: 1869840
+  - mStartSample: 2081520
+    mEndSample: 2081520
+  - mStartSample: 2152080
+    mEndSample: 2152080
+  - mStartSample: 2363760
+    mEndSample: 2363760
+  - mStartSample: 2434320
+    mEndSample: 2434320
+  - mStartSample: 2646000
+    mEndSample: 2646000
+  - mStartSample: 2716560
+    mEndSample: 2716560
+  - mStartSample: 2928240
+    mEndSample: 2928240
+  - mStartSample: 2998800
+    mEndSample: 2998800
+  - mStartSample: 3210480
+    mEndSample: 3210480
+  - mStartSample: 4498200
+    mEndSample: 4498200
+  - mStartSample: 4656960
+    mEndSample: 4656960
+  - mStartSample: 5292000
+    mEndSample: 5292000
+  - mStartSample: 5609520
+    mEndSample: 5609520
+  - mStartSample: 6191640
+    mEndSample: 6191640
+  _SerializedPayloadTypes:
+  - SonicBloom.Koreo.FloatPayload
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads:
+  - mFloatVal: 0
+  - mFloatVal: 1
+  - mFloatVal: 1.1
+  - mFloatVal: 2
+  - mFloatVal: 2.1
+  - mFloatVal: 3
+  - mFloatVal: 3.1
+  - mFloatVal: 4
+  - mFloatVal: 4.1
+  - mFloatVal: 5
+  - mFloatVal: 5.1
+  - mFloatVal: 6
+  - mFloatVal: 6.1
+  - mFloatVal: 7
+  - mFloatVal: 7.1
+  - mFloatVal: 8
+  - mFloatVal: 9
+  - mFloatVal: 9.1
+  - mFloatVal: 10
+  - mFloatVal: 11
+  - mFloatVal: 12
+  _FloatPayloadIdxs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000014000000
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads: []
+  _TextPayloadIdxs: 

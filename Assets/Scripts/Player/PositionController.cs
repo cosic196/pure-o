@@ -24,7 +24,10 @@ public class PositionController : MonoBehaviour {
         _goalTransform = _transform;
         _currentTransform = _transform;
         EventManager.StartListening("MoveToNextPoint", MoveToNextPoint);
-	}
+        EventManager.StartListening("MoveToNextPointSpan", MoveToNextPointSpan);
+        EventManager.StartListening("MoveToNextPointSpanEnd", MoveToNextPointSpanEnd);
+        EventManager.StartListening("MoveToNextPointSpanStart", MoveToNextPointSpanStart);
+    }
 
     private void MoveToNextPoint(string speed)
     {
@@ -36,12 +39,33 @@ public class PositionController : MonoBehaviour {
             _goalTransform = _movePoints.Dequeue();
         }
     }
+    
+    private void MoveToNextPointSpanStart(string curvePoint)
+    {
+        float t = float.Parse(curvePoint);
+        _currentTransform = _goalTransform;
+        _goalTransform = _movePoints.Dequeue();
+        _transform.position = Vector3.Lerp(_currentTransform.position, _goalTransform.position, t);
+        _transform.rotation = Quaternion.Lerp(_currentTransform.rotation, _goalTransform.rotation, t);
+    }
+
+    private void MoveToNextPointSpan(string curvePoint)
+    {
+        float t = float.Parse(curvePoint);
+        _transform.position = Vector3.Lerp(_currentTransform.position, _goalTransform.position, t);
+        _transform.rotation = Quaternion.Lerp(_currentTransform.rotation, _goalTransform.rotation, t);
+    }
+    
+    private void MoveToNextPointSpanEnd()
+    {
+        _transform.position = _goalTransform.position;
+        _transform.rotation = _goalTransform.rotation;
+    }
 
     void Update () {
-        //TODO remove after testing
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(_timer == 1f)
         {
-            EventManager.TriggerEvent("MoveToNextPoint", "4");
+            return;
         }
 
         _transform.position = Vector3.Lerp(_currentTransform.position, _goalTransform.position, _animationCurve.Evaluate(_timer));

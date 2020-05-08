@@ -21,7 +21,7 @@ public class ShootController : MonoBehaviour {
         SetCurrentPosition(Position.Center);
         _notesInRange = new Queue<NoteInfo>();
         #if UNITY_ANDROID || UNITY_IOS
-        Koreographer.Instance.RegisterForEvents("test", AutoShoot);
+        EventManager.StartListening("MobileNoteSpawned", AutoShoot);
         #endif
         EventManager.StartListening("PressedShoot", Shoot);
         EventManager.StartListening("NoteInRange", AddNote);
@@ -31,7 +31,7 @@ public class ShootController : MonoBehaviour {
         EventManager.StartListening("PressedCenter", () => { SetCurrentPosition(Position.Center); });
     }
 
-    private void AutoShoot(KoreographyEvent koreoEvent)
+    private void AutoShoot()
     {
         Shoot();
     }

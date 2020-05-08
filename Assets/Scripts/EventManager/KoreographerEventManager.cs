@@ -20,7 +20,7 @@ public class KoreographerEventManager : MonoBehaviour {
     void Start () {
         _simpleMusicPlayer = GetComponent<SimpleMusicPlayer>();
         Koreographer.Instance.RegisterForEvents(_enemyDeathEventId, TriggerEnemyDeath);
-        Koreographer.Instance.RegisterForEvents(_playerMoveEventId, TriggerPayerMove);
+        Koreographer.Instance.RegisterForEventsWithTime(_playerMoveEventId, TriggerPlayerMove);
         Koreographer.Instance.RegisterForEvents(_enemyAppearEventId, TriggerEnemiesAppeared);
         Koreographer.Instance.RegisterForEvents(_enemyDisappearEventId, TriggerEnemiesDisappeared);
         Koreographer.Instance.RegisterForEvents(_otherEventId, TriggerOther);
@@ -42,21 +42,30 @@ public class KoreographerEventManager : MonoBehaviour {
         EventManager.TriggerEvent("EnemiesAppearedKoreo", koreoEvent.GetFloatValue().ToString());
     }
 
-    private void TriggerPayerMove(KoreographyEvent koreoEvent)
+    private void TriggerPlayerMove(KoreographyEvent koreoEvent, int sampleTime, int sampleDelta, DeltaSlice deltaSlice)
     {
-        EventManager.TriggerEvent("MoveToNextPoint", koreoEvent.GetFloatValue().ToString());
-    }
-
-    // TODO : Delete after testing
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.X))
+        if(koreoEvent.IsOneOff())
         {
-            EventManager.TriggerEvent("EnemiesDie");
+            EventManager.TriggerEvent("MoveToNextPoint", koreoEvent.GetFloatValue().ToString());
         }
-        if(Input.GetKeyDown(KeyCode.M))
+        else
         {
-            EventManager.TriggerEvent("EnemiesMoved");
+            if (koreoEvent.StartSample < sampleTime - sampleDelta &&
+            koreoEvent.EndSample > sampleTime)
+            {
+                EventManager.TriggerEvent("MoveToNextPointSpan", koreoEvent.GetValueOfCurveAtTime(sampleTime).ToString());
+            }
+            else
+            {
+                if (koreoEvent.StartSample >= sampleTime - sampleDelta)
+                {
+                    EventManager.TriggerEvent("MoveToNextPointSpanStart", koreoEvent.GetValueOfCurveAtTime(sampleTime).ToString());
+                }
+                if (koreoEvent.EndSample <= sampleTime)
+                {
+                    EventManager.TriggerEvent("MoveToNextPointSpanEnd");
+                }
+            }
         }
     }
 

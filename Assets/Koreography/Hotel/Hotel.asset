@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: Hotel
+  m_EditorClassIdentifier: 
+  mSourceClip: {fileID: 8300000, guid: abb758b4a3b39ac48a69c5e3ba0fc8b0, type: 3}
+  mAudioFilePath: 
+  mSampleRate: 44100
+  mIgnoreLatencyOffset: 0
+  mTempoSections:
+  - sectionName: New Section
+    startSample: 0
+    samplesPerBeat: 17640
+    beatsPerMeasure: 4
+    bStartNewMeasure: 1
+  mTracks:
+  - {fileID: 11400000, guid: 4c88cd52400620242a866110c62cbaa5, type: 2}
+  - {fileID: 11400000, guid: e0eb1a3cd4a4fef4086a2ef2ca8267df, type: 2}
+  - {fileID: 11400000, guid: e71383ac00ce6264ca60c79a31c96f38, type: 2}
+  - {fileID: 11400000, guid: 455450a77f2338943aa197e87733ad46, type: 2}
+  - {fileID: 11400000, guid: 8a7eea106cae8dd47975c01addc211d6, type: 2}
+  - {fileID: 11400000, guid: f7954985710a6434fa586ae6ef6f1608, type: 2}
+  - {fileID: 11400000, guid: 18fb486429bdcaa48b58725420f2cffe, type: 2}

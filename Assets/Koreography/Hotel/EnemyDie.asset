@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1223223985, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
+  m_Name: EnemyDie
+  m_EditorClassIdentifier: 
+  mEventID: EnemyDeath
+  mEventList:
+  - mStartSample: 1199520
+    mEndSample: 1199520
+  - mStartSample: 1481760
+    mEndSample: 1481760
+  - mStartSample: 1764000
+    mEndSample: 1764000
+  - mStartSample: 2046240
+    mEndSample: 2046240
+  - mStartSample: 2328480
+    mEndSample: 2328480
+  - mStartSample: 2610720
+    mEndSample: 2610720
+  - mStartSample: 2892960
+    mEndSample: 2892960
+  - mStartSample: 3175200
+    mEndSample: 3175200
+  - mStartSample: 3316320
+    mEndSample: 3316320
+  - mStartSample: 4586400
+    mEndSample: 4586400
+  - mStartSample: 4692240
+    mEndSample: 4692240
+  - mStartSample: 4974480
+    mEndSample: 4974480
+  - mStartSample: 5150880
+    mEndSample: 5150880
+  - mStartSample: 5256720
+    mEndSample: 5256720
+  - mStartSample: 5574240
+    mEndSample: 5574240
+  - mStartSample: 5821200
+    mEndSample: 5821200
+  - mStartSample: 6068160
+    mEndSample: 6068160
+  - mStartSample: 6385680
+    mEndSample: 6385680
+  - mStartSample: 6738480
+    mEndSample: 6738480
+  _SerializedPayloadTypes: []
+  _AssetPayloads: []
+  _AssetPayloadIdxs: 
+  _ColorPayloads: []
+  _ColorPayloadIdxs: 
+  _CurvePayloads: []
+  _CurvePayloadIdxs: 
+  _FloatPayloads: []
+  _FloatPayloadIdxs: 
+  _GradientPayloads: []
+  _GradientPayloadIdxs: 
+  _IntPayloads: []
+  _IntPayloadIdxs: 
+  _SpectrumPayloads: []
+  _SpectrumPayloadIdxs: 
+  _TextPayloads: []
+  _TextPayloadIdxs: 

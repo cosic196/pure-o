@@ -65,10 +65,13 @@ public class NoteSpawner : MonoBehaviour {
         spawnedNote.SetActive(true);
         spawnedNoteDouble.SetActive(true);
     }
-    
+
     private void NoteTrigger(KoreographyEvent ev)
     {
-        if(_events.Count <= _eventNumber)
+        #if UNITY_ANDROID || UNITY_IOS
+        EventManager.TriggerEvent("MobileNoteSpawned");
+        #endif
+        if (_events.Count <= _eventNumber)
         {
             return;
         }
