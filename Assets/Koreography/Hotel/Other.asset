@@ -16,12 +16,12 @@ MonoBehaviour:
   mEventList:
   - mStartSample: 176400
     mEndSample: 176400
-  - mStartSample: 388080
-    mEndSample: 388080
-  - mStartSample: 564480
-    mEndSample: 564480
-  - mStartSample: 740880
-    mEndSample: 740880
+  - mStartSample: 423360
+    mEndSample: 423360
+  - mStartSample: 670320
+    mEndSample: 670320
+  - mStartSample: 917280
+    mEndSample: 917280
   - mStartSample: 987840
     mEndSample: 987840
   - mStartSample: 1128960

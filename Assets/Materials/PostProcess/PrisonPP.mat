@@ -72,7 +72,7 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _bwBlend: 0
+    - _bwBlend: 0.25
     m_Colors:
     - _AddColor: {r: 0, g: 0.015686275, b: 0.07450981, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
