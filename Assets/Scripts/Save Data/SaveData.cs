@@ -6,6 +6,7 @@ public class SaveData {
     public List<Level> Levels;
     public List<FamilyMemberName> FamilyMembersAlive;
     public List<string> BoyDialogue;
+    public string SceneToLoad;
 
     public SaveData()
     {

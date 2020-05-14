@@ -6,8 +6,6 @@ public class GameLoader : MonoBehaviour {
     [SerializeField]
     private string _firstLevel;
     [SerializeField]
-    private string _levelSelectLevel;
-    [SerializeField]
     private Texture2D _cursorTexture;
 
 	void Start () {
@@ -20,7 +18,7 @@ public class GameLoader : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene(_levelSelectLevel);
+            SceneManager.LoadScene(saveData.SceneToLoad);
         }
     }
 }

@@ -1,19 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class FamilyMemberController : Shootable
 {
     [SerializeField]
     private int _hp;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private List<int> _triggerAnimationOn;
     
     public override void Shot(string shootInfo)
     {
@@ -22,6 +15,10 @@ public class FamilyMemberController : Shootable
             return;
         }
         _hp--;
+        if(_triggerAnimationOn.Contains(_hp))
+        {
+            EventManager.TriggerEvent("FamilyMemberAnimate");
+        }
         if(_hp > 0)
         {
             EventManager.TriggerEvent("FamilyMemberDamaged");

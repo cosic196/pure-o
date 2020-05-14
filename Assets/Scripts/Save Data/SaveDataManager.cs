@@ -31,4 +31,11 @@ public static class SaveDataManager {
             return new SaveData();
         }
     }
+
+    public static void ChangeSceneToLoad(string sceneName)
+    {
+        var saveData = Load();
+        saveData.SceneToLoad = sceneName;
+        Save(saveData);
+    }
 }
