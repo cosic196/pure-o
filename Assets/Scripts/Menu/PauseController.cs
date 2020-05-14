@@ -10,6 +10,8 @@ public class PauseController : MonoBehaviour {
     [SerializeField]
     private List<AudioSource> _audioSourcesToPause;
 
+    private float _timeScaleBeforePause;
+
     void Start () {
         EventManager.StartListening("Paused", Pause);
         EventManager.StartListening("Unpaused", Unpause);
@@ -17,7 +19,9 @@ public class PauseController : MonoBehaviour {
 	
 	private void Pause()
     {
+        _timeScaleBeforePause = Time.timeScale;
         Time.timeScale = 0f;
+        CustomTime.SetPaused();
         foreach(var component in _componentsToDisable)
         {
             component.enabled = false;
@@ -49,6 +53,7 @@ public class PauseController : MonoBehaviour {
             audioSource.UnPause();
         }
         Cursor.visible = false;
-        Time.timeScale = 1f;
+        Time.timeScale = _timeScaleBeforePause;
+        CustomTime.SetUnpaused();
     }
 }

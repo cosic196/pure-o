@@ -10,6 +10,8 @@ public class InputController : MonoBehaviour {
     private string _shootKey;
     [SerializeField]
     private string _pauseKey;
+    [SerializeField]
+    private string _upgradeKey;
 
     private void Start()
     {
@@ -51,6 +53,12 @@ public class InputController : MonoBehaviour {
 		if(Input.GetKeyDown(_shootKey))
         {
             EventManager.TriggerEvent("PressedShoot");
+        }
+
+        //Upgrade
+        if (Input.GetKeyDown(_upgradeKey))
+        {
+            EventManager.TriggerEvent("PressedUpgrade");
         }
 
         //Moving

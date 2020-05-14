@@ -7,7 +7,7 @@ public class HpController : MonoBehaviour {
     private float _maxHp;
     private float _currentHp;
     [SerializeField]
-    private float _noteHitRegen;
+    private float _regen;
     [SerializeField]
     private float _missedNoteDamage;
     [SerializeField]
@@ -40,18 +40,29 @@ public class HpController : MonoBehaviour {
     
 	void Start () {
         EventManager.StartListening("NoteOutOfRange", Damaged);
-        EventManager.StartListening("NoteShot", Regenerate);
+        EventManager.StartListening("AnEnemyDied", Regenerate);
+        EventManager.StartListening("AnEnemyWasShot", RegenerateQuarter);
         EventManager.StartListening("OutOfRhythmShot", DamagedNoInput);
+        EventManager.StartListening("DamagePlayerByInput", DamagedByInput);
         _currentHp = _maxHp;
 	}
 
-    private void Regenerate(string json)
+    private void RegenerateQuarter()
+    {
+        if (CurrentHp == _maxHp)
+        {
+            return;
+        }
+        CurrentHp += _regen / 4f;
+    }
+
+    private void Regenerate()
     {
         if(CurrentHp == _maxHp)
         {
             return;
         }
-        CurrentHp += _noteHitRegen;
+        CurrentHp += _regen;
     }
 
     private void Damaged(string noteInfo)
@@ -63,6 +74,22 @@ public class HpController : MonoBehaviour {
         CurrentHp -= _missedNoteDamage;
         EventManager.TriggerEvent("PlayerDamaged");
         if(CurrentHp <= 0f)
+        {
+            _dead = true;
+            EventManager.TriggerEvent("PlayerDied");
+        }
+    }
+
+    private void DamagedByInput(string input)
+    {
+        if (!enabled)
+            return;
+        if (_dead)
+            return;
+        var damage = float.Parse(input);
+        CurrentHp -= _maxHp * (damage / 100f);
+        //EventManager.TriggerEvent("PlayerDamaged");
+        if (CurrentHp <= 0f)
         {
             _dead = true;
             EventManager.TriggerEvent("PlayerDied");

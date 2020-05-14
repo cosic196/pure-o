@@ -8,13 +8,13 @@ public static class UpgradesGlobal  {
         new Upgrade
         {
             UpgradeName = UpgradeName.AutoRegenerate,
-            bondRequirement = 0.03f,
+            bondRequirement = 0.4f,
             Description = "Your psyche automatically replenishes over time."
         },
         new Upgrade
         {
             UpgradeName = UpgradeName.SlowMotion,
-            bondRequirement = 0.9f,
+            bondRequirement = 0.03f,
             Description = "Unlocked notes which make everything around you slower for a couple of seconds."
         }
     };

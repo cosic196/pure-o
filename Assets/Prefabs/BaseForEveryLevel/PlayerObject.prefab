@@ -1703,6 +1703,7 @@ GameObject:
   - component: {fileID: 114839834420152812}
   - component: {fileID: 114957079811860142}
   - component: {fileID: 114498353734528368}
+  - component: {fileID: 7905655359813878156}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -1742,6 +1743,7 @@ MonoBehaviour:
   _moveRightKey: d
   _shootKey: mouse 0
   _pauseKey: f
+  _upgradeKey: 
 --- !u!114 &114787617054835292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1810,7 +1812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 100
-  _noteHitRegen: 10
+  _regen: 0
   _missedNoteDamage: 25
   _autoRegen: 0
   _regenerationSpeed: 5
@@ -1919,6 +1921,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hpController: {fileID: 114644116397689520}
+--- !u!114 &7905655359813878156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773729839117318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1709db88dec2f40a9d15526454d977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradesControllersPrefabs:
+  - UpgradeName: 0
+    Prefab: {fileID: 8983729051448887110, guid: 771ac8d57859d704b879d31b1c53105a,
+      type: 3}
 --- !u!1 &1778437311066124
 GameObject:
   m_ObjectHideFlags: 0

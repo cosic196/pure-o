@@ -59,13 +59,13 @@ MonoBehaviour:
     value: 38
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1, g: 0.91517913, b: 0, a: 1}
   hueShift:
     overrideState: 0
     value: 112
   saturation:
     overrideState: 0
-    value: -100
+    value: 61
   brightness:
     overrideState: 0
     value: 0
