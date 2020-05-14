@@ -11,6 +11,7 @@ public class FocusUIController : MonoBehaviour
     private TextMeshProUGUI _descTMPro;
     private Animator _animator;
     private Dictionary<string, string> _focusedItemsDictionary;
+    private bool _focused = false;
 
     void Start()
     {
@@ -22,8 +23,11 @@ public class FocusUIController : MonoBehaviour
 
     private void Unfocus()
     {
-        if(_animator.GetCurrentAnimatorStateInfo(0).IsName("ShowFocusUI"))
-        _animator.SetTrigger("Hide");
+        if(_focused)
+        {
+            _animator.SetTrigger("Hide");
+            _focused = false;
+        }
     }
 
     private void TryFocusOnObject(string focusedObjectName)
@@ -31,6 +35,7 @@ public class FocusUIController : MonoBehaviour
         string desc = "";
         if(_focusedItemsDictionary.TryGetValue(focusedObjectName, out desc))
         {
+            _focused = true;
             _descTMPro.text = desc;
             _animator.SetTrigger("Show");
         }

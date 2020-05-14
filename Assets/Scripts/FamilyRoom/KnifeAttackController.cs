@@ -4,6 +4,8 @@ public class KnifeAttackController : MonoBehaviour
 {
     [SerializeField]
     private KeyCode _attackKey;
+    [SerializeField]
+    private GameObject _bloodParticles;
     private Animator _animator;
 
     void Start()
@@ -37,15 +39,12 @@ public class KnifeAttackController : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f))
+        if (Physics.Raycast(ray, out hit, 1.2f))
         {
-            if(hit.distance > 0.8f)
-            {
-                return;
-            }
             if (hit.transform.tag == "Shootable")
             {
                 hit.transform.GetComponent<Shootable>().Shot("");
+                Instantiate(_bloodParticles, hit.point, Quaternion.identity);
             }
         }
     }

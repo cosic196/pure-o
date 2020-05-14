@@ -18,6 +18,10 @@ public class StartSeriesOfTriggersOnInput : MonoBehaviour {
                 }
                 _index++;
             }
+            else
+            {
+                enabled = false;
+            }
         }
 	}
 
