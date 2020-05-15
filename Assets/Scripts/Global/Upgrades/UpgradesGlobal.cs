@@ -15,7 +15,7 @@ public static class UpgradesGlobal  {
         {
             UpgradeName = UpgradeName.SlowMotion,
             bondRequirement = 0.03f,
-            Description = "Unlocked notes which make everything around you slower for a couple of seconds."
+            Description = "Press right click to slow down time.\nDrains psyche slowly."
         }
     };
 }

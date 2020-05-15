@@ -17,7 +17,7 @@ public class EnemyScoreController : MonoBehaviour {
         _gameObjectEventManager.StartListening("Headshot", GiveScoreOnHeadshot);
 	}
 
-    private void GiveScoreOnHeadshot()
+    private void GiveScoreOnHeadshot(string shootInfo)
     {
         EventManager.TriggerEvent("GiveScore", _headshotScore.ToString());
     }

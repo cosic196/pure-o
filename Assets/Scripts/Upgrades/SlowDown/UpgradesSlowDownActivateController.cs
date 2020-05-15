@@ -9,7 +9,7 @@ public class UpgradesSlowDownActivateController : MonoBehaviour
     private float _slowDown;
     [SerializeField]
     [Range(0f, 100f)]
-    private double _hpCost;
+    private double _hpCostPerSecond;
 
     [Space]
 
@@ -35,15 +35,21 @@ public class UpgradesSlowDownActivateController : MonoBehaviour
 
     private void StopSlowDown()
     {
+        if(!_slowDownActivated)
+        {
+            return;
+        }
         _timerAdditionMultiplier = 1;
         _slowDownActivated = false;
+        EventManager.TriggerEvent("EnableRegen");
     }
 
     private void StartSlowDown()
     {
-        _timeScaleBeforeSlowDown = Time.timeScale;
+        _timeScaleBeforeSlowDown = Time.timeScale - CustomTime._speedUpTimeScale;
         _slowDownActivated = true;
         _timerAdditionMultiplier = -1;
+        EventManager.TriggerEvent("DisableRegen");
     }
 
     private void ConfigureSlowDown()
@@ -68,7 +74,7 @@ public class UpgradesSlowDownActivateController : MonoBehaviour
     {
         if(_slowDownActivated)
         {
-            EventManager.TriggerEvent("DamagePlayerByInput", _hpCost.ToString());
+            EventManager.TriggerEvent("DamagePlayerByInput", (_hpCostPerSecond * Time.unscaledDeltaTime * CustomTime.slowDownUpgradeTimeScale).ToString());
         }
     }
 
@@ -78,21 +84,26 @@ public class UpgradesSlowDownActivateController : MonoBehaviour
         {
             _transitionTimer = 0f;
             _timerAdditionMultiplier = 0;
-            Time.timeScale = Mathf.Lerp(_timeScaleBeforeSlowDown - _slowDown, _timeScaleBeforeSlowDown, _animationCurve.Evaluate(_transitionTimer));
+            AdjustTimeScale();
             _gameObjectEventManager.TriggerEvent("Animate", _animationCurve.Evaluate(_transitionTimer).ToString());
         }
         else if(_transitionTimer > 1f)
         {
             _transitionTimer = 1f;
             _timerAdditionMultiplier = 0;
-            Time.timeScale = Mathf.Lerp(_timeScaleBeforeSlowDown - _slowDown, _timeScaleBeforeSlowDown, _animationCurve.Evaluate(_transitionTimer));
+            AdjustTimeScale();
             _gameObjectEventManager.TriggerEvent("Animate", _animationCurve.Evaluate(_transitionTimer).ToString());
         }
         else if(_transitionTimer != 1f && _transitionTimer != 0f)
         {
-            Time.timeScale = Mathf.Lerp(_timeScaleBeforeSlowDown - _slowDown, _timeScaleBeforeSlowDown, _animationCurve.Evaluate(_transitionTimer));
+            AdjustTimeScale();
             _gameObjectEventManager.TriggerEvent("Animate", _animationCurve.Evaluate(_transitionTimer).ToString());
         }
-        _transitionTimer += CustomTime.slowDownUpgradeTimeScale * Time.unscaledDeltaTime * _timerAdditionMultiplier;
+        _transitionTimer += CustomTime.slowDownUpgradeTimeScale * Time.unscaledDeltaTime * _timerAdditionMultiplier * _transitionSpeed;
+    }
+
+    private void AdjustTimeScale()
+    {
+        Time.timeScale = Mathf.Lerp(_timeScaleBeforeSlowDown - _slowDown + CustomTime._speedUpTimeScale, _timeScaleBeforeSlowDown + CustomTime._speedUpTimeScale, _animationCurve.Evaluate(_transitionTimer));
     }
 }

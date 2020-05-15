@@ -8,6 +8,8 @@ public class SensitivitySlider : MonoBehaviour {
 
 	void Start () {
         _slider = GetComponent<Slider>();
+        _slider.value = PlayerPrefs.GetFloat("Sensitivity", 1f);
+        _slider.onValueChanged.AddListener(delegate { SetSensitivity(); TriggerSensitivityEvent(); });
 	}
 	
 	public void SetSensitivity()

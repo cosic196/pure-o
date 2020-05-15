@@ -7,7 +7,7 @@ public class QuitButtonController : MonoBehaviour {
     {
         string activeScene = SceneManager.GetActiveScene().name;
         if(activeScene == "LevelSelectScene" ||
-            activeScene == "BrainScene")
+            activeScene == "BrainScene" || activeScene == "GameLoader")
         {
             Application.Quit();
         }

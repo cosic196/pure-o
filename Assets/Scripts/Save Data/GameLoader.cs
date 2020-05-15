@@ -9,10 +9,15 @@ public class GameLoader : MonoBehaviour {
     private Texture2D _cursorTexture;
 
 	void Start () {
-        Cursor.visible = false;
+        EventManager.StartListening("StartGame", StartGame);
+
         Cursor.SetCursor(_cursorTexture, Vector2.zero, CursorMode.Auto);
+    }
+
+    private void StartGame()
+    {
         var saveData = SaveDataManager.Load();
-        if(saveData.Levels.Count == 0)
+        if (saveData.Levels.Count == 0)
         {
             SceneManager.LoadScene(_firstLevel);
         }
@@ -20,5 +25,12 @@ public class GameLoader : MonoBehaviour {
         {
             SceneManager.LoadScene(saveData.SceneToLoad);
         }
+    }
+
+    public void FadeOutAndStartGame()
+    {
+        Cursor.visible = false;
+        EventManager.TriggerEvent("FadeOut", "StartGame");
+        EventManager.TriggerEvent("FadeOutMusic");
     }
 }

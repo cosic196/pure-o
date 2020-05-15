@@ -54,6 +54,10 @@ public class FpsCameraMovementController : MonoBehaviour
 
     void Update()
     {
+        if(Time.timeScale == 0)
+        {
+            return;
+        }
 #if UNITY_ANDROID || UNITY_IOS
         _transform.Rotate(0, -Input.gyro.rotationRateUnbiased.y * sensitivity.y, 0);
         _transform.Rotate(-Input.gyro.rotationRateUnbiased.x * sensitivity.x, 0, 0);

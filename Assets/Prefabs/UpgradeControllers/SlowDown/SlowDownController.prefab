@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db51340f35d0a184083c1e2d076d2e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowDown: 0.25
-  _hpCost: 0.10000000149011612
+  _slowDown: 0.4
+  _hpCostPerSecond: 4
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -97,4 +97,4 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _transitionSpeed: 6
+  _transitionSpeed: 4

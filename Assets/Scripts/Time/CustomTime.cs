@@ -5,6 +5,7 @@ public static class CustomTime {
 
     public static float _customScale = 1f;
     public static float slowDownUpgradeTimeScale = 1f;
+    public static float _speedUpTimeScale = 0f;
 
 	public static float GetDeltaTime()
     {

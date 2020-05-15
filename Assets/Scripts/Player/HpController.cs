@@ -15,6 +15,7 @@ public class HpController : MonoBehaviour {
     [SerializeField]
     private float _regenerationSpeed;
     private bool _dead = false;
+    private bool _canRegen = true;
 
     public float CurrentHp
     {
@@ -44,11 +45,17 @@ public class HpController : MonoBehaviour {
         EventManager.StartListening("AnEnemyWasShot", RegenerateQuarter);
         EventManager.StartListening("OutOfRhythmShot", DamagedNoInput);
         EventManager.StartListening("DamagePlayerByInput", DamagedByInput);
+        EventManager.StartListening("DisableRegen", () => { _canRegen = false; });
+        EventManager.StartListening("EnableRegen", () => { _canRegen = true; });
         _currentHp = _maxHp;
 	}
 
     private void RegenerateQuarter()
     {
+        if(!_canRegen)
+        {
+            return;
+        }
         if (CurrentHp == _maxHp)
         {
             return;
@@ -58,6 +65,10 @@ public class HpController : MonoBehaviour {
 
     private void Regenerate()
     {
+        if(!_canRegen)
+        {
+            return;
+        }
         if(CurrentHp == _maxHp)
         {
             return;

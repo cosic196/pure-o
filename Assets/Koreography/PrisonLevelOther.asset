@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mEventID: Other
   mEventList:
+  - mStartSample: 463050
+    mEndSample: 463050
   - mStartSample: 6118875
     mEndSample: 6118875
   - mStartSample: 6135412
     mEndSample: 6135412
+  - mStartSample: 6151950
+    mEndSample: 6151950
   - mStartSample: 6251175
     mEndSample: 6251175
   - mStartSample: 6284250
@@ -38,8 +43,10 @@ MonoBehaviour:
   _SpectrumPayloads: []
   _SpectrumPayloadIdxs: 
   _TextPayloads:
+  - mTextVal: EnablePlayerInput
   - mTextVal: OpenDoor
   - mTextVal: LevelEnd
+  - mTextVal: UpgradesStopSlowDown
   - mTextVal: ShowEndScore
   - mTextVal: ShowCursor
-  _TextPayloadIdxs: 00000000010000000200000003000000
+  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000

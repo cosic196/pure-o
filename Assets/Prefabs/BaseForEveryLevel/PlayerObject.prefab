@@ -1704,6 +1704,7 @@ GameObject:
   - component: {fileID: 114957079811860142}
   - component: {fileID: 114498353734528368}
   - component: {fileID: 7905655359813878156}
+  - component: {fileID: 4310915390399349893}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -1742,8 +1743,8 @@ MonoBehaviour:
   _moveLeftKey: a
   _moveRightKey: d
   _shootKey: mouse 0
-  _pauseKey: f
-  _upgradeKey: 
+  _pauseKey: escape
+  _upgradeKey: mouse 1
 --- !u!114 &114787617054835292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,6 +1938,20 @@ MonoBehaviour:
   - UpgradeName: 0
     Prefab: {fileID: 8983729051448887110, guid: 771ac8d57859d704b879d31b1c53105a,
       type: 3}
+--- !u!114 &4310915390399349893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773729839117318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532c7c5b74e0b5248bec088c7cc8566a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedUpKey: 101
+  _speedUpAmount: 3
 --- !u!1 &1778437311066124
 GameObject:
   m_ObjectHideFlags: 0

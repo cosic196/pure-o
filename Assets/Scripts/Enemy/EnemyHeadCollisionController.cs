@@ -3,7 +3,7 @@
     public override void Shot(string shootInfo)
     {
         base.Shot(shootInfo);
-        gameObjectEventManager.TriggerEvent("Headshot");
+        gameObjectEventManager.TriggerEvent("Headshot", shootInfo);
         EventManager.TriggerEvent("Headshot");
     }
 }

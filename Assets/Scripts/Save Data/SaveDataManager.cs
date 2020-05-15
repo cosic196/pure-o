@@ -32,6 +32,11 @@ public static class SaveDataManager {
         }
     }
 
+    public static void DeleteSaveFile()
+    {
+        Save(new SaveData());
+    }
+
     public static void ChangeSceneToLoad(string sceneName)
     {
         var saveData = Load();

@@ -4221,6 +4221,9 @@ MonoBehaviour:
   - 'SisterPainting-Our sister made this.
 
     He always supported her in her art.'
+  - 'BrotherBody-He''s dead.
+
+    I killed him...'
   _descTMPro: {fileID: 700158105}
 --- !u!43 &857320357
 Mesh:
@@ -7398,6 +7401,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 17.478, z: 0}
+--- !u!1 &1455542705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455542706}
+  - component: {fileID: 1455542707}
+  m_Layer: 11
+  m_Name: BrotherBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1455542706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455542705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1930568971}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1455542707
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455542705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.90310407, y: 0.8372699, z: 0.02728096}
+  m_Center: {x: -0.03544629, y: -0.70468193, z: -0.0073359166}
 --- !u!1 &1466494453
 GameObject:
   m_ObjectHideFlags: 0
@@ -10006,6 +10053,7 @@ Transform:
   - {fileID: 1662880252}
   - {fileID: 219958667}
   - {fileID: 1018089064}
+  - {fileID: 1455542706}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: -60.000004, z: 0}

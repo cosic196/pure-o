@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelCompleter : MonoBehaviour {
 
     [SerializeField]
-    private string _level;
+    private string _thisLevel;
     [SerializeField]
     private FamilyMemberName _familyMemberName;
     [SerializeField]
@@ -19,9 +19,9 @@ public class LevelCompleter : MonoBehaviour {
 
     private void Start()
     {
-        if(string.IsNullOrEmpty(_level))
+        if(string.IsNullOrEmpty(_thisLevel))
         {
-            _level = SceneManager.GetActiveScene().name;
+            _thisLevel = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -32,15 +32,25 @@ public class LevelCompleter : MonoBehaviour {
 
         foreach (var level in saveData.Levels)
         {
-            if(level.Name == _level)
+            if(level.Name == _thisLevel)
             {
-                level.Completed = true;
-                level.Score = _scoreManager.Score;
-                level.FamilyMember = new FamilyMember
+                if(!level.Completed)
                 {
-                    Bond = _bond,
-                    Name = _familyMemberName
-                };
+                    level.Completed = true;
+                    level.FamilyMember = new FamilyMember
+                    {
+                        Bond = _bond,
+                        Name = _familyMemberName
+                    };
+                    saveData.BoyDialogue = _boyDialogue;
+                    saveData.Levels.Add(new Level
+                    {
+                        Completed = false,
+                        Name = _unlockLevel,
+                        Score = 0
+                    });
+                }
+                level.Score = _scoreManager.Score;
                 foundAndModifiedLevel = true;
                 break;
             }
@@ -49,7 +59,7 @@ public class LevelCompleter : MonoBehaviour {
         {
             saveData.Levels.Add(new Level
             {
-                Name = _level,
+                Name = _thisLevel,
                 Completed = true,
                 Score = _scoreManager.Score,
                 FamilyMember = new FamilyMember
