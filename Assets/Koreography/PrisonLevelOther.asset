@@ -24,8 +24,6 @@ MonoBehaviour:
     mEndSample: 6151950
   - mStartSample: 6251175
     mEndSample: 6251175
-  - mStartSample: 6284250
-    mEndSample: 6284250
   _SerializedPayloadTypes:
   - SonicBloom.Koreo.TextPayload
   _AssetPayloads: []
@@ -48,5 +46,4 @@ MonoBehaviour:
   - mTextVal: LevelEnd
   - mTextVal: UpgradesStopSlowDown
   - mTextVal: ShowEndScore
-  - mTextVal: ShowCursor
-  _TextPayloadIdxs: 000000000100000002000000030000000400000005000000
+  _TextPayloadIdxs: 0000000001000000020000000300000004000000

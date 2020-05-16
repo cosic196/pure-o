@@ -2284,7 +2284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70200cb6bebd8a4d8b74ceb720f6af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unpauseKey: f
+  _unpauseKey: escape
 --- !u!114 &264114073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9276,6 +9276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: intensity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531602189461670, guid: 1b144bf41ecfdf9408d6f8bac478a5c1,
+        type: 3}
+      propertyPath: _pauseKey
+      value: escape
       objectReference: {fileID: 0}
     - target: {fileID: 114911753668649928, guid: 1b144bf41ecfdf9408d6f8bac478a5c1,
         type: 3}

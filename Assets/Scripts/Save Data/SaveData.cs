@@ -7,6 +7,7 @@ public class SaveData {
     public List<FamilyMemberName> FamilyMembersAlive;
     public List<string> BoyDialogue;
     public string SceneToLoad;
+    public bool NewUpgradeNotification;
 
     public SaveData()
     {
@@ -22,6 +23,7 @@ public class SaveData {
         {
             "Where should we go next?"
         };
+        NewUpgradeNotification = false;
     }
 }
 

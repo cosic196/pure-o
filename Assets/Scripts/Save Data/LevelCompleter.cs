@@ -17,6 +17,8 @@ public class LevelCompleter : MonoBehaviour {
     [SerializeField]
     private List<string> _boyDialogue;
 
+    private bool _unlockedNewUpgrades = false;
+
     private void Start()
     {
         if(string.IsNullOrEmpty(_thisLevel))
@@ -76,7 +78,39 @@ public class LevelCompleter : MonoBehaviour {
             });
             saveData.BoyDialogue = _boyDialogue;
         }
-
+        if(!saveData.NewUpgradeNotification)
+        {
+            saveData.NewUpgradeNotification = _unlockedNewUpgrades;
+        }
         SaveDataManager.Save(saveData);
+    }
+
+    public LevelCompletedInfo GetInfo()
+    {
+        string thisLevelName = _thisLevel;
+        if (string.IsNullOrEmpty(_thisLevel))
+        {
+            thisLevelName = SceneManager.GetActiveScene().name;
+        }
+        return new LevelCompletedInfo(_bond, _familyMemberName, thisLevelName);
+    }
+
+    public class LevelCompletedInfo
+    {
+        public float Bond { get; private set; }
+        public FamilyMemberName FamilyMemberName { get; private set; }
+        public string ThisLevelName { get; private set; }
+
+        public LevelCompletedInfo(float bond, FamilyMemberName familyMemberName, string thisLevelName)
+        {
+            Bond = bond;
+            FamilyMemberName = familyMemberName;
+            ThisLevelName = thisLevelName;
+        }
+    }
+
+    public void UnlockUpgrade()
+    {
+        _unlockedNewUpgrades = true;
     }
 }

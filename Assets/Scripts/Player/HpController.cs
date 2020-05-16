@@ -42,7 +42,7 @@ public class HpController : MonoBehaviour {
 	void Start () {
         EventManager.StartListening("NoteOutOfRange", Damaged);
         EventManager.StartListening("AnEnemyDied", Regenerate);
-        EventManager.StartListening("AnEnemyWasShot", RegenerateQuarter);
+        EventManager.StartListening("AnEnemyWasShot", RegenerateALittle);
         EventManager.StartListening("OutOfRhythmShot", DamagedNoInput);
         EventManager.StartListening("DamagePlayerByInput", DamagedByInput);
         EventManager.StartListening("DisableRegen", () => { _canRegen = false; });
@@ -50,7 +50,7 @@ public class HpController : MonoBehaviour {
         _currentHp = _maxHp;
 	}
 
-    private void RegenerateQuarter()
+    private void RegenerateALittle()
     {
         if(!_canRegen)
         {
@@ -60,7 +60,8 @@ public class HpController : MonoBehaviour {
         {
             return;
         }
-        CurrentHp += _regen / 4f;
+        CurrentHp += _regen / 3f;
+        EventManager.TriggerEvent("HpRegenerated", (_regen / 4f).ToString());
     }
 
     private void Regenerate()
@@ -74,6 +75,7 @@ public class HpController : MonoBehaviour {
             return;
         }
         CurrentHp += _regen;
+        EventManager.TriggerEvent("HpRegenerated", _regen.ToString());
     }
 
     private void Damaged(string noteInfo)

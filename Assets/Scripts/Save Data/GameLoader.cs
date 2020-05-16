@@ -10,7 +10,8 @@ public class GameLoader : MonoBehaviour {
 
 	void Start () {
         EventManager.StartListening("StartGame", StartGame);
-
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.SetCursor(_cursorTexture, Vector2.zero, CursorMode.Auto);
     }
 
@@ -30,6 +31,7 @@ public class GameLoader : MonoBehaviour {
     public void FadeOutAndStartGame()
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         EventManager.TriggerEvent("FadeOut", "StartGame");
         EventManager.TriggerEvent("FadeOutMusic");
     }

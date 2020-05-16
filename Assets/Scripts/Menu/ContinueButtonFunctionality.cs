@@ -2,6 +2,9 @@
 
 public class ContinueButtonFunctionality : MonoBehaviour {
 
+    [SerializeField]
+    private bool _whiteFadeOut = false;
+
 	public void Continue()
     {
         EventManager.TriggerEvent("UnpauseStarted");
@@ -11,6 +14,13 @@ public class ContinueButtonFunctionality : MonoBehaviour {
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        EventManager.TriggerEvent("FadeOut", "LoadNextLevel");
+        if(_whiteFadeOut)
+        {
+            EventManager.TriggerEvent("WhiteFadeOut", "LoadNextLevel");
+        }
+        else
+        {
+            EventManager.TriggerEvent("FadeOut", "LoadNextLevel");
+        }
     }
 }
