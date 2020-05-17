@@ -9,6 +9,9 @@ public class BWEffect : MonoBehaviour
     public RenderTexture CameraRenderTexture;
     public RenderTexture Buffer;
 
+    [SerializeField]
+    private AnimationCurve _intensityCurve;
+
     public void OnEnable()
     {
         PostprocessMaterial.SetFloat("_bwBlend", intensity);
@@ -41,6 +44,6 @@ public class BWEffect : MonoBehaviour
         float currentHp = float.Parse(hpSlashMaxHp.Split('/')[0]);
         float maxHp = float.Parse(hpSlashMaxHp.Split('/')[1]);
         intensity = 1 - currentHp / maxHp;
-        PostprocessMaterial.SetFloat("_bwBlend", intensity);
+        PostprocessMaterial.SetFloat("_bwBlend", _intensityCurve.Evaluate(intensity));
     }
 }

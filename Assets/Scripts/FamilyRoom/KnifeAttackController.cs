@@ -39,7 +39,7 @@ public class KnifeAttackController : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1.2f))
+        if (Physics.Raycast(ray, out hit, 2f))
         {
             if (hit.transform.tag == "Shootable")
             {
